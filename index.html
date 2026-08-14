@@ -59,13 +59,11 @@ nav{
 nav .wrap{display:flex; align-items:center; gap:8px; height:58px; flex-wrap:nowrap; overflow-x:auto; scrollbar-width:none}
 nav .wrap::-webkit-scrollbar{display:none}
 nav .brand{
-  font-family:var(--serif); font-weight:600; margin-right:auto; white-space:nowrap; letter-spacing:.04em;
-  color:var(--ink); text-decoration:none;
-  opacity:0; visibility:hidden; transform:translateY(-4px);
-  transition:opacity .25s ease, transform .25s ease, visibility .25s;
+  margin-right:auto; white-space:nowrap;
+  font-size:.82rem; letter-spacing:.12em; color:var(--ink-3);
+  padding:6px 10px; border-radius:6px; text-decoration:none;
 }
-nav .brand:hover{text-decoration:none}
-nav.scrolled .brand{opacity:1; visibility:visible; transform:none}
+nav .brand:hover{background:var(--accent-soft); color:var(--accent); text-decoration:none}
 nav a.navlink{
   color:var(--ink-2); font-size:.86rem; padding:6px 10px; border-radius:6px; white-space:nowrap;
 }
@@ -196,7 +194,7 @@ footer{padding:36px 0 60px; color:var(--ink-3); font-size:.8rem}
 
 <nav>
   <div class="wrap">
-    <a class="brand" href="#top"><span class="ja">平岡 大樹</span><span class="en">Daiki Hiraoka</span></a>
+    <a class="brand" href="#top">Top</a>
     <a class="navlink" href="#research"><span class="ja">研究</span><span class="en">Research</span></a>
     <a class="navlink" href="#publications"><span class="ja">論文</span><span class="en">Publications</span></a>
     <a class="navlink" href="#activity"><span class="ja">発表・受賞・助成</span><span class="en">Talks / Awards / Grants</span></a>
@@ -649,17 +647,6 @@ footer{padding:36px 0 60px; color:var(--ink-3); font-size:.8rem}
     html.setAttribute('data-lang', next);
     html.setAttribute('lang', next);
   });
-
-  // ヘッダーの氏名は，冒頭を通り過ぎてから表示する
-  var navEl = document.querySelector('nav');
-  var heroEl = document.querySelector('header.hero');
-  function syncBrand(){
-    var limit = heroEl ? heroEl.offsetHeight - 80 : 300;
-    navEl.classList.toggle('scrolled', window.scrollY > limit);
-  }
-  window.addEventListener('scroll', syncBrand, {passive:true});
-  window.addEventListener('resize', syncBrand);
-  syncBrand();
 
   // 論文フィルタ
   var buttons = document.querySelectorAll('.pub-filter button');
