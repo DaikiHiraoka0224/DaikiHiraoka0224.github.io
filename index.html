@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="ja" data-lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>平岡大樹 / Daiki Hiraoka — 発達心理学・認知神経科学</title>
+<meta name="description" content="平岡大樹（神戸女学院大学 心理学部 専任講師）の研究者ページ。養育行動，養育者心理，乳児の泣き声への反応，縦断研究。">
+<meta property="og:title" content="平岡大樹 / Daiki Hiraoka">
+<meta property="og:description" content="発達心理学・認知神経科学｜養育行動・養育者心理・乳児の泣き声への反応・縦断研究">
+<meta property="og:type" content="profile">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
+<style>
+:root{
+  --ink:#1c1f23;
+  --ink-2:#4a5158;
+  --ink-3:#767f88;
+  --rule:#e2e5e9;
+  --bg:#fbfbf9;
+  --card:#ffffff;
+  --accent:#1f5f63;
+  --accent-soft:#e7f0f0;
+  --max:920px;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --ink:#e9ecef; --ink-2:#b2bac1; --ink-3:#8a939c;
+    --rule:#2b3238; --bg:#14171a; --card:#1a1e22;
+    --accent:#7fc4c8; --accent-soft:#1e2b2c;
+  }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth; scroll-padding-top:78px}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans JP",sans-serif;
+  font-size:16px; line-height:1.85; -webkit-font-smoothing:antialiased;
+}
+html[data-lang="en"] body{ font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif; }
+.wrap{max-width:var(--max); margin:0 auto; padding:0 24px}
+a{color:var(--accent); text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* language toggle */
+html[data-lang="ja"] .en{display:none !important}
+html[data-lang="en"] .ja{display:none !important}
+
+/* nav */
+nav{
+  position:sticky; top:0; z-index:50;
+  background:color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter:saturate(180%) blur(12px);
+  border-bottom:1px solid var(--rule);
+}
+nav .wrap{display:flex; align-items:center; gap:8px; height:58px; flex-wrap:nowrap; overflow-x:auto; scrollbar-width:none}
+nav .wrap::-webkit-scrollbar{display:none}
+nav .brand{font-weight:700; margin-right:auto; white-space:nowrap; letter-spacing:.02em}
+nav a.navlink{
+  color:var(--ink-2); font-size:.86rem; padding:6px 10px; border-radius:6px; white-space:nowrap;
+}
+nav a.navlink:hover{background:var(--accent-soft); color:var(--accent); text-decoration:none}
+.langbtn{
+  border:1px solid var(--rule); background:var(--card); color:var(--ink-2);
+  border-radius:999px; padding:5px 14px; font-size:.8rem; cursor:pointer; white-space:nowrap;
+  font-family:inherit; letter-spacing:.04em;
+}
+.langbtn:hover{border-color:var(--accent); color:var(--accent)}
+
+/* hero */
+header.hero{padding:64px 0 44px; border-bottom:1px solid var(--rule)}
+.hero-grid{display:flex; gap:36px; align-items:flex-start; flex-wrap:wrap}
+.portrait{
+  width:150px; height:150px; border-radius:50%; flex:none; object-fit:cover;
+  background:var(--accent-soft); border:1px solid var(--rule);
+  display:flex; align-items:center; justify-content:center; color:var(--ink-3); font-size:.72rem; text-align:center; line-height:1.5;
+}
+.hero h1{
+  font-size:clamp(1.9rem,4.6vw,2.7rem); margin:0 0 4px; line-height:1.25; letter-spacing:.01em;
+  font-family:Georgia,"Times New Roman","Yu Mincho",serif; font-weight:600;
+}
+.hero .kana{color:var(--ink-3); font-size:.9rem; letter-spacing:.08em; margin:0 0 14px}
+.hero .role{margin:0 0 6px; color:var(--ink-2)}
+.hero .role strong{color:var(--ink)}
+.tags{display:flex; flex-wrap:wrap; gap:7px; margin:18px 0 0; padding:0; list-style:none}
+.tags li{
+  font-size:.78rem; padding:4px 11px; border-radius:999px;
+  background:var(--accent-soft); color:var(--accent); border:1px solid transparent;
+}
+.links{display:flex; flex-wrap:wrap; gap:10px; margin-top:20px}
+.links a{
+  font-size:.83rem; border:1px solid var(--rule); background:var(--card);
+  padding:6px 14px; border-radius:8px; color:var(--ink-2);
+}
+.links a:hover{border-color:var(--accent); color:var(--accent); text-decoration:none}
+
+/* sections */
+section{padding:52px 0; border-bottom:1px solid var(--rule)}
+section:last-of-type{border-bottom:none}
+h2{
+  font-size:.82rem; letter-spacing:.18em; text-transform:uppercase; color:var(--accent);
+  margin:0 0 26px; font-weight:700;
+}
+h3{font-size:1.05rem; margin:0 0 8px; font-weight:650; letter-spacing:.01em}
+p{margin:0 0 1em; color:var(--ink-2)}
+p.lead{font-size:1.03rem; color:var(--ink)}
+
+.themes{display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:18px; margin-top:28px}
+.theme{
+  background:var(--card); border:1px solid var(--rule); border-radius:12px; padding:22px 22px 18px;
+}
+.theme .num{font-size:.72rem; letter-spacing:.14em; color:var(--ink-3); display:block; margin-bottom:10px}
+.theme p{font-size:.9rem; margin:0; color:var(--ink-2)}
+
+/* publications */
+.pub-filter{display:flex; gap:8px; flex-wrap:wrap; margin-bottom:24px}
+.pub-filter button{
+  font-family:inherit; font-size:.8rem; padding:5px 13px; border-radius:999px; cursor:pointer;
+  border:1px solid var(--rule); background:var(--card); color:var(--ink-2);
+}
+.pub-filter button[aria-pressed="true"]{background:var(--accent); border-color:var(--accent); color:#fff}
+.yeargroup{display:grid; grid-template-columns:64px 1fr; gap:0 20px; margin-bottom:6px}
+.yeargroup .yr{
+  font-family:Georgia,serif; font-size:1.15rem; color:var(--ink-3); padding-top:14px;
+  position:sticky; top:70px; align-self:start;
+}
+ol.pubs{list-style:none; margin:0; padding:0}
+ol.pubs li{
+  padding:14px 0; border-top:1px solid var(--rule); font-size:.9rem; line-height:1.7;
+}
+.yeargroup ol.pubs li:first-child{border-top:none}
+ol.pubs .t{color:var(--ink); font-weight:600; display:block; margin-bottom:3px}
+ol.pubs .a{color:var(--ink-3); font-size:.84rem; display:block}
+ol.pubs .j{color:var(--ink-2); font-style:italic}
+ol.pubs .doi{font-size:.79rem; margin-left:6px; white-space:nowrap}
+.badge{
+  display:inline-block; font-size:.68rem; letter-spacing:.06em; padding:1px 7px; border-radius:4px;
+  background:var(--accent-soft); color:var(--accent); margin-right:6px; vertical-align:1px;
+}
+.badge.first{background:#f3ecd9; color:#8a6d1f}
+@media (prefers-color-scheme: dark){ .badge.first{background:#332c17; color:#d8be7c} }
+
+/* simple lists */
+ul.plain{list-style:none; margin:0; padding:0}
+ul.plain li{
+  padding:13px 0; border-top:1px solid var(--rule);
+  display:grid; grid-template-columns:130px 1fr; gap:4px 20px; font-size:.9rem;
+}
+ul.plain li:first-child{border-top:none}
+ul.plain .when{color:var(--ink-3); font-size:.83rem; font-variant-numeric:tabular-nums}
+ul.plain .what{color:var(--ink)}
+ul.plain .sub{color:var(--ink-3); font-size:.83rem; display:block; margin-top:2px}
+@media (max-width:600px){
+  ul.plain li{grid-template-columns:1fr}
+  .yeargroup{grid-template-columns:1fr; gap:0}
+  .yeargroup .yr{position:static; padding-top:22px}
+}
+
+/* contact */
+.contact-box{
+  background:var(--card); border:1px solid var(--rule); border-radius:12px; padding:26px;
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:22px;
+}
+.contact-box .k{font-size:.74rem; letter-spacing:.12em; color:var(--ink-3); display:block; margin-bottom:4px}
+footer{padding:36px 0 60px; color:var(--ink-3); font-size:.8rem}
+.note{font-size:.83rem; color:var(--ink-3)}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <span class="brand"><span class="ja">平岡 大樹</span><span class="en">Daiki Hiraoka</span></span>
+    <a class="navlink" href="#research"><span class="ja">研究</span><span class="en">Research</span></a>
+    <a class="navlink" href="#publications"><span class="ja">論文</span><span class="en">Publications</span></a>
+    <a class="navlink" href="#activity"><span class="ja">発表・受賞・助成</span><span class="en">Talks / Awards / Grants</span></a>
+    <a class="navlink" href="#teaching"><span class="ja">教育</span><span class="en">Teaching</span></a>
+    <a class="navlink" href="#cv"><span class="ja">略歴</span><span class="en">CV</span></a>
+    <a class="navlink" href="#contact"><span class="ja">連絡先</span><span class="en">Contact</span></a>
+    <button class="langbtn" id="langToggle" type="button">
+      <span class="ja">English</span><span class="en">日本語</span>
+    </button>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <!-- 顔写真を使う場合：下の div を <img class="portrait" src="photo.jpg" alt=""> に置き換えてください -->
+    <div class="portrait"><span class="ja">写真<br>（任意）</span><span class="en">Photo<br>(optional)</span></div>
+    <div style="flex:1; min-width:260px">
+      <h1><span class="ja">平岡 大樹</span><span class="en">Daiki Hiraoka, Ph.D.</span></h1>
+      <p class="kana"><span class="ja">ひらおか だいき ／ Daiki Hiraoka, Ph.D.</span><span class="en">HIRAOKA Daiki</span></p>
+      <p class="role"><span class="ja"><strong>専任講師</strong>　神戸女学院大学 心理学部</span><span class="en"><strong>Lecturer</strong>, Department of Psychology, Kobe College</span></p>
+      <p class="role"><span class="ja">研究員　名古屋市立大学大学院医学研究科／Special Community Member, University of Denver</span><span class="en">Researcher, Nagoya City University Graduate School of Medical Sciences ・ Special Community Member, University of Denver</span></p>
+      <ul class="tags">
+        <li><span class="ja">養育行動</span><span class="en">Parenting behavior</span></li>
+        <li><span class="ja">養育者心理</span><span class="en">Caregiver psychology</span></li>
+        <li><span class="ja">乳児の泣き声への反応</span><span class="en">Responses to infant crying</span></li>
+        <li><span class="ja">縦断研究</span><span class="en">Longitudinal research</span></li>
+        <li><span class="ja">発達認知神経科学</span><span class="en">Developmental cognitive neuroscience</span></li>
+      </ul>
+      <div class="links">
+        <a href="https://researchmap.jp/hiraoka" target="_blank" rel="noopener">researchmap</a>
+        <a href="https://orcid.org/0000-0003-2776-5129" target="_blank" rel="noopener">ORCID</a>
+        <a href="https://scholar.google.com/citations?user=YOUR_ID" target="_blank" rel="noopener">Google Scholar</a>
+        <a href="https://pubmed.ncbi.nlm.nih.gov/?term=Hiraoka+D%5BAuthor%5D" target="_blank" rel="noopener">PubMed</a>
+        <a href="#contact"><span class="ja">連絡先</span><span class="en">Contact</span></a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section id="research">
+  <div class="wrap">
+    <h2>About &amp; Research</h2>
+    <p class="lead">
+      <span class="ja">
+        「人は，どのようにして親になっていくのか」。これが私の研究の中心にある問いです。
+        乳児の泣き声という，養育者にとって最も切実で，時に最も過酷な刺激への反応を手がかりに，
+        養育者の心理・行動・脳・遺伝の変化を，実験と縦断調査の両面から検討しています。
+      </span>
+      <span class="en">
+        My research asks how people <em>become</em> parents. Using infant crying — one of the most
+        urgent and, at times, most aversive signals a caregiver encounters — as a window, I study how
+        caregivers' psychology, behavior, brain, and epigenetic profiles change across the transition
+        to parenthood, combining laboratory experiments with longitudinal cohort designs.
+      </span>
+    </p>
+    <p>
+      <span class="ja">
+        従来の養育研究の多くは，養育者の反応を「個人差」として固定的に捉えてきました。
+        これに対して私は，同じ養育者のなかで反応が時間とともに変わっていく<strong>個人内変動</strong>に着目し，
+        その変化を生み出す心理的・神経的・遺伝的メカニズムを明らかにしようとしています。
+        産後うつや不適切な養育の理解と予防に，基礎研究の側から貢献することを目指しています。
+      </span>
+      <span class="en">
+        Much of the parenting literature treats caregivers' responses as a stable individual difference.
+        I instead focus on <strong>within-individual variation</strong> — how the same caregiver's responses shift over
+        weeks and months — and on the psychological, neural, and genetic mechanisms behind that shift.
+        The long-term aim is to inform the prevention of postpartum depression and child maltreatment
+        from a basic-science perspective.
+      </span>
+    </p>
+
+    <div class="themes">
+      <div class="theme">
+        <span class="num">01</span>
+        <h3><span class="ja">乳児の泣き声への反応</span><span class="en">Responding to infant cries</span></h3>
+        <p><span class="ja">認知的負荷，配偶者の存在，被養育経験，オキシトシン受容体遺伝子多型などが，泣き声への共感・接近回避行動・生理反応をどう調整するのかを，実験室実験で検討しています。</span><span class="en">Laboratory experiments on how cognitive load, spousal presence, childhood adversity, and OXTR genotype modulate empathy, approach–avoidance behavior, and physiological responses to infant cries.</span></p>
+      </div>
+      <div class="theme">
+        <span class="num">02</span>
+        <h3><span class="ja">親になる過程の縦断的検討</span><span class="en">The transition to parenthood</span></h3>
+        <p><span class="ja">初産の母親を対象に，泣きへの注意バイアスや信念が産後どのように変化するかを追跡。母子結合と産後抑うつの関係を，個人内・個人間に分離して分析しています。</span><span class="en">Following first-time mothers to track change in attentional bias and beliefs about crying, and disentangling within- from between-person associations between mother-to-infant bonding and postpartum depression.</span></p>
+      </div>
+      <div class="theme">
+        <span class="num">03</span>
+        <h3><span class="ja">養育の神経・エピジェネティック基盤</span><span class="en">Neural and epigenetic bases</span></h3>
+        <p><span class="ja">fMRI・脳形態計測とDNAメチル化解析を組み合わせ，泣き声処理に関わる脳活動と，オキシトシン系のエピジェネティックな個人差との関連を検討しています。</span><span class="en">Combining fMRI and structural MRI with DNA methylation analysis to link cry-evoked brain responses to epigenetic variation in the oxytocin system.</span></p>
+      </div>
+      <div class="theme">
+        <span class="num">04</span>
+        <h3><span class="ja">大規模コホートと縦断データ解析</span><span class="en">Large cohorts &amp; longitudinal methods</span></h3>
+        <p><span class="ja">エコチル調査（JECS）やABCD研究などの大規模縦断データを用いた解析に加え，縦断データ解析手法そのものの解説・教育にも取り組んでいます。</span><span class="en">Analyses of large-scale cohorts including the Japan Environment and Children's Study (JECS) and the ABCD Study, alongside methodological writing and teaching on longitudinal data analysis.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="publications">
+  <div class="wrap">
+    <h2>Publications</h2>
+    <p class="note">
+      <span class="ja">査読付き原著論文を中心に掲載しています。<span class="badge first">筆頭</span>は筆頭著者論文。最新の一覧は <a href="https://researchmap.jp/hiraoka" target="_blank" rel="noopener">researchmap</a> をご覧ください。</span>
+      <span class="en">Peer-reviewed articles. <span class="badge first">first</span> indicates first-authored work. See <a href="https://researchmap.jp/hiraoka" target="_blank" rel="noopener">researchmap</a> for the complete list.</span>
+    </p>
+
+    <div class="pub-filter">
+      <button type="button" data-filter="all" aria-pressed="true"><span class="ja">すべて</span><span class="en">All</span></button>
+      <button type="button" data-filter="first" aria-pressed="false"><span class="ja">筆頭著者</span><span class="en">First-authored</span></button>
+      <button type="button" data-filter="ja" aria-pressed="false"><span class="ja">日本語論文</span><span class="en">In Japanese</span></button>
+    </div>
+
+    <div class="yeargroup">
+      <div class="yr">2026</div>
+      <ol class="pubs">
+        <li data-kind="first">
+          <span class="badge first">1st</span><span class="t">The impact of labor induction in vaginal delivery on the development of mother-to-infant bonding and the mediating role of breastfeeding practices: the Japan Environment and Children's Study</span>
+          <span class="a"><strong>Hiraoka, D.</strong>, Tachi, A., Takahashi, Y., Kato, S., Ito, Y., Ohya, Y., Saitoh, S., Sugiura-Ogasawara, M., &amp; Kamijima, M.</span>
+          <span class="j">BMC Pregnancy and Childbirth</span>, 2026.<a class="doi" href="https://doi.org/10.1186/s12884-026-09574-4" target="_blank" rel="noopener">DOI</a>
+        </li>
+        <li data-kind="first">
+          <span class="badge first">1st</span><span class="t">Investigating the role of executive function in brain responses to infant crying among new parents</span>
+          <span class="a"><strong>Hiraoka, D.</strong>, Xie, Y., Powers, S., Patterson, G., Chin, J., Brady, N., Yeh, T., &amp; Kim, P.</span>
+          <span class="j">Social Cognitive and Affective Neuroscience</span>, 21(1), 2026.<a class="doi" href="https://doi.org/10.1093/scan/nsag002" target="_blank" rel="noopener">DOI</a>
+        </li>
+        <li data-kind="co">
+          <span class="t">Family size and food allergy in early childhood: The Japan Environment and Children's Study</span>
+          <span class="a">Nomura, T., Tanida, H., Inoue, T., Kato, S., <strong>Hiraoka, D.</strong>, Ito, Y., Sugiura-Ogasawara, M., Saitoh, S., Kamijima, M., &amp; Ohya, Y.</span>
+          <span class="j">Allergy</span>, 2026.<a class="doi" href="https://doi.org/10.1111/all.70303" target="_blank" rel="noopener">DOI</a>
+        </li>
+      </ol>
+    </div>
+
+    <div class="yeargroup">
+      <div class="yr">2025</div>
+      <ol class="pubs">
+        <li data-kind="co">
+          <span class="t">Multi-epigenome-wide analyses and meta-analysis of child maltreatment in judicial autopsies and intervened children and adolescents</span>
+          <span class="a">Nishitani, S., Fujisawa, T. X., Takiguchi, S., Yao, A., Murata, K., <strong>Hiraoka, D.</strong>, et al.</span>
+          <span class="j">Molecular Psychiatry</span>, 2025.<a class="doi" href="https://doi.org/10.1038/s41380-025-03236-1" target="_blank" rel="noopener">DOI</a>
+        </li>
+        <li data-kind="co">
+          <span class="t">Associations of PFAS exposure with obstetric and birth outcomes in the Japan Environment and Children's Study (JECS): Is maternal endometriosis an effect modifier?</span>
+          <span class="a">Dionisio, J., Ito, Y., Kato, S., <strong>Hiraoka, D.</strong>, Ohya, Y., Yamazaki, S., Isobe, T., Saitoh, S., Sugiura-Ogasawara, M., &amp; Kamijima, M.</span>
+          <span class="j">Environmental Pollution</span>, 2025.<a class="doi" href="https://doi.org/10.1016/j.envpol.2025.127353" target="_blank" rel="noopener">DOI</a>
+        </li>
+        <li data-kind="co">
+          <span class="t">Behavioral and emotional difficulties in maltreated children: Associations with epigenetic clock changes and visual attention to social cues</span>
+          <span class="a">Ochiai, K., Nishitani, S., Yao, A., <strong>Hiraoka, D.</strong>, Kawata, N. Y. S., Suzuki, S., Fujisawa, T. X., &amp; Tomoda, A.</span>
+          <span class="j">PLOS ONE</span>, 20(5), e0321952, 2025.<a class="doi" href="https://doi.org/10.1371/journal.pone.0321952" target="_blank" rel="noopener">DOI</a>
+        </li>
+        <li data-kind="first ja">
+          <span class="badge first">1st</span><span class="badge">招待</span><span class="t">コホート研究における縦断データの解析入門</span>
+          <span class="a">平岡大樹</span>
+          <span class="j">子どもの健康科学</span>, 26(2), 54, 2025.（査読有・招待論文）
+        </li>
+      </ol>
+    </div>
+
+    <div class="yeargroup">
+      <div class="yr">2024</div>
+      <ol class="pubs">
+        <li data-kind="first">
+          <span class="badge first">1st</span><span class="t">Within-individual relationships between mother-to-infant bonding and postpartum depressive symptoms: A longitudinal study</span>
+          <span class="a"><strong>Hiraoka, D.</strong>, Kawanami, A., Sakurai, K., &amp; Mori, C.</span>
+          <span class="j">Psychological Medicine</span>, 2024.<a class="doi" href="https://doi.org/10.1017/S0033291723003707" target="_blank" rel="noopener">DOI</a>
+        </li>
+        <li data-kind="first ja">
+          <span class="badge first">1st</span><span class="badge">招待</span><span class="t">親になること：計量書誌学分析を用いた研究動向と展望</span>
+          <span class="a">平岡大樹</span>
+          <span class="j">ベビーサイエンス</span>, 23, 21–45, 2024.（査読有・招待論文）
+        </li>
+      </ol>
+    </div>
+
+    <div class="yeargroup">
+      <div class="yr">2023</div>
+      <ol class="pubs">
+        <li data-kind="first">
+          <span class="badge first">1st</span><span class="t">Longitudinal changes in attention bias to infant crying in primiparous mothers</span>
+          <span class="a"><strong>Hiraoka, D.</strong>, Makita, K., Sakakibara, N., Morioka, S., Orisaka, M., Yoshida, Y., &amp; Tomoda, A.</span>
+          <span class="j">Frontiers in Behavioral Neuroscience</span>, 17, 1192275, 2023.<a class="doi" href="https://doi.org/10.3389/fnbeh.2023.1192275" target="_blank" rel="noopener">DOI</a>
+        </li>
+        <li data-kind="first">
+          <span class="badge first">1st</span><span class="t">Effects of prenatal cannabis exposure on developmental trajectory of cognitive ability and brain volumes in the Adolescent Brain Cognitive Development (ABCD) study</span>
+          <span class="a"><strong>Hiraoka, D.</strong>, Makita, K., Hamatani, S., Tomoda, A., &amp; Mizuno, Y.</span>
+          <span class="j">Developmental Cognitive Neuroscience</span>, 60, 101209, 2023.<a class="doi" href="https://doi.org/10.1016/j.dcn.2023.101209" target="_blank" rel="noopener">DOI</a>
+        </li>
+        <li data-kind="co">
+          <span class="t">Validity and reliability of the Japanese versions of the Coronavirus Anxiety Scale for adolescents and Obsession with COVID-19 Scale for adolescents</span>
+          <span class="a">Makino, T., Ide, S., Shiino, T., <strong>Hiraoka, D.</strong>, Ishibashi, S., Suzuki, F., &amp; Nishitani, S.</span>
+          <span class="j">PeerJ</span>, 11, e15710, 2023.<a class="doi" href="https://doi.org/10.7717/peerj.15710" target="_blank" rel="noopener">DOI</a>
+        </li>
+      </ol>
+    </div>
+
+    <div class="yeargroup">
+      <div class="yr">2022</div>
+      <ol class="pubs">
+        <li data-kind="co">
+          <span class="t">Longitudinal impact of COVID-19 pandemic on mental health of children in the ABCD study cohort</span>
+          <span class="a">Hamatani, S., <strong>Hiraoka, D.</strong>, Makita, K., Tomoda, A., &amp; Mizuno, Y.</span>
+          <span class="j">Scientific Reports</span>, 12, 19601, 2022.<a class="doi" href="https://doi.org/10.1038/s41598-022-22694-z" target="_blank" rel="noopener">DOI</a>
+        </li>
+        <li data-kind="co">
+          <span class="t">Epigenetic clock deceleration and maternal reproductive efforts: Associations with increasing gray matter volume of the precuneus</span>
+          <span class="a">Nishitani, S., Kasaba, R., <strong>Hiraoka, D.</strong>, Shimada, K., Fujisawa, T. X., Okazawa, H., &amp; Tomoda, A.</span>
+          <span class="j">Frontiers in Genetics</span>, 13, 803584, 2022.<a class="doi" href="https://doi.org/10.3389/fgene.2022.803584" target="_blank" rel="noopener">DOI</a>
+        </li>
+      </ol>
+    </div>
+
+    <div class="yeargroup">
+      <div class="yr">2021</div>
+      <ol class="pubs">
+        <li data-kind="first">
+          <span class="badge first">1st</span><span class="t">Longitudinal study of maternal beliefs about infant crying during the postpartum period: Interplay with infant's temperament</span>
+          <span class="a"><strong>Hiraoka, D.</strong>, Nomura, M., &amp; Kato, M.</span>
+          <span class="j">Frontiers in Psychology</span>, 12, 786391, 2021.<a class="doi" href="https://doi.org/10.3389/fpsyg.2021.786391" target="_blank" rel="noopener">DOI</a>
+        </li>
+        <li data-kind="co">
+          <span class="t">Influence of the COVID-19 pandemic on parenting stress across Asian countries: A cross-national study</span>
+          <span class="a">Kurata, S., <strong>Hiraoka, D.</strong>, Ahmad Adlan, A. S., Jayanath, S., Hamzah, N., Ahmad-Fauzi, A., Fujisawa, T. X., Nishitani, S., &amp; Tomoda, A.</span>
+          <span class="j">Frontiers in Psychology</span>, 12, 782298, 2021.<a class="doi" href="https://doi.org/10.3389/fpsyg.2021.782298" target="_blank" rel="noopener">DOI</a>
+        </li>
+        <li data-kind="co">
+          <span class="t">A multi-modal MRI analysis of brain structure and function in relation to OXT methylation in maltreated children and adolescents</span>
+          <span class="a">Nishitani, S., Fujisawa, T. X., <strong>Hiraoka, D.</strong>, Makita, K., Takiguchi, S., Hamamura, S., Yao, A., Shimada, K., Smith, A. K., &amp; Tomoda, A.</span>
+          <span class="j">Translational Psychiatry</span>, 11, 589, 2021.<a class="doi" href="https://doi.org/10.1038/s41398-021-01714-y" target="_blank" rel="noopener">DOI</a>
+        </li>
+        <li data-kind="co">
+          <span class="t">Increased resting-state activity in the cerebellum with mothers having less adaptive sensory processing and trait anxiety</span>
+          <span class="a">Sakakibara, N., Makita, K., <strong>Hiraoka, D.</strong>, Kasaba, R., Kuboshita, R., Shimada, K., Fujisawa, T. X., &amp; Tomoda, A.</span>
+          <span class="j">Human Brain Mapping</span>, 2021.<a class="doi" href="https://doi.org/10.1002/hbm.25594" target="_blank" rel="noopener">DOI</a>
+        </li>
+        <li data-kind="first ja">
+          <span class="badge first">1st</span><span class="badge">招待</span><span class="t">非定型な泣き声を形成する要因の理解と介入可能性</span>
+          <span class="a">平岡大樹</span>
+          <span class="j">ベビーサイエンス</span>, 20, 37–38, 2021.（査読有・招待論文）
+        </li>
+      </ol>
+    </div>
+
+    <div class="yeargroup">
+      <div class="yr">2020</div>
+      <ol class="pubs">
+        <li data-kind="first">
+          <span class="badge first">1st</span><span class="t">Relationship between oxytocin and maternal approach behaviors to infants' vocalizations</span>
+          <span class="a"><strong>Hiraoka, D.</strong>, Ooishi, Y., Mugitani, R., &amp; Nomura, M.</span>
+          <span class="j">Comprehensive Psychoneuroendocrinology</span>, 4, 100010, 2020.<a class="doi" href="https://doi.org/10.1016/j.cpnec.2020.100010" target="_blank" rel="noopener">DOI</a>
+        </li>
+        <li data-kind="first">
+          <span class="badge first">1st</span><span class="t">The influence of cognitive load on maternal postural sway and heart rate in response to infant vocalizations</span>
+          <span class="a"><strong>Hiraoka, D.</strong>, &amp; Nomura, M.</span>
+          <span class="j">Developmental Psychobiology</span>, 62(6), 829–840, 2020.<a class="doi" href="https://doi.org/10.1002/dev.21961" target="_blank" rel="noopener">DOI</a>
+        </li>
+        <li data-kind="first">
+          <span class="badge first">1st</span><span class="t">Relationship between parenting stress and school closures due to the COVID-19 pandemic</span>
+          <span class="a"><strong>Hiraoka, D.</strong>, &amp; Tomoda, A.</span>
+          <span class="j">Psychiatry and Clinical Neurosciences</span>, 74(9), 497–498, 2020.<a class="doi" href="https://doi.org/10.1111/pcn.13088" target="_blank" rel="noopener">DOI</a>
+        </li>
+      </ol>
+    </div>
+
+    <div class="yeargroup">
+      <div class="yr">2019</div>
+      <ol class="pubs">
+        <li data-kind="first">
+          <span class="badge first">1st</span><span class="t">Maternal childhood adversity, OXTR genotype and cognitive load impact on perceptual and behavioral responses to infant crying</span>
+          <span class="a"><strong>Hiraoka, D.</strong>, &amp; Nomura, M.</span>
+          <span class="j">Psychoneuroendocrinology</span>, 104, 195–202, 2019.<a class="doi" href="https://doi.org/10.1016/j.psyneuen.2019.03.005" target="_blank" rel="noopener">DOI</a>
+        </li>
+        <li data-kind="first">
+          <span class="badge first">1st</span><span class="t">Differential effects of infant vocalizations on approach-avoidance postural movements in mothers</span>
+          <span class="a"><strong>Hiraoka, D.</strong>, Ooishi, Y., Mugitani, R., &amp; Nomura, M.</span>
+          <span class="j">Frontiers in Psychology</span>, 10, 1378, 2019.<a class="doi" href="https://doi.org/10.3389/fpsyg.2019.01378" target="_blank" rel="noopener">DOI</a>
+        </li>
+        <li data-kind="first">
+          <span class="badge first">1st</span><span class="t">Spousal presence modulates salivary alpha-amylase responses to infant cry in mothers with high attachment insecurity</span>
+          <span class="a"><strong>Hiraoka, D.</strong>, Miyasaka, M., &amp; Nomura, M.</span>
+          <span class="j">Parenting: Science and Practice</span>, 19(1–2), 5–21, 2019.
+        </li>
+        <li data-kind="first">
+          <span class="badge first">1st</span><span class="t">A possible mechanism of stress-relieving effects of spousal presence and implications for future infant cry research</span>
+          <span class="a"><strong>Hiraoka, D.</strong>, Miyasaka, M., &amp; Nomura, M.</span>
+          <span class="j">Parenting: Science and Practice</span>, 19(1–2), 34–38, 2019.
+        </li>
+      </ol>
+    </div>
+
+    <div class="yeargroup">
+      <div class="yr">2016–17</div>
+      <ol class="pubs">
+        <li data-kind="first">
+          <span class="badge first">1st</span><span class="t">Would situational stress be harmful for anyone? The influence of situational factors and trait empathy on women's response to infant crying</span>
+          <span class="a"><strong>Hiraoka, D.</strong>, &amp; Nomura, M.</span>
+          <span class="j">Infant Behavior and Development</span>, 2017.<a class="doi" href="https://doi.org/10.1016/j.infbeh.2017.04.005" target="_blank" rel="noopener">DOI</a>
+        </li>
+        <li data-kind="first">
+          <span class="badge first">1st</span><span class="t">The influence of cognitive load on empathy and intention in response to infant crying</span>
+          <span class="a"><strong>Hiraoka, D.</strong>, &amp; Nomura, M.</span>
+          <span class="j">Scientific Reports</span>, 6, 28247, 2016.<a class="doi" href="https://doi.org/10.1038/srep28247" target="_blank" rel="noopener">DOI</a>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section id="activity">
+  <div class="wrap">
+    <h2>Talks, Awards &amp; Grants</h2>
+
+    <h3 style="margin-top:8px"><span class="ja">招待講演・学会発表（抜粋）</span><span class="en">Selected Talks</span></h3>
+    <ul class="plain" style="margin-bottom:40px">
+      <li><span class="when">2024.07</span><span class="what"><span class="ja">養育行動の背景にある脳構造・機能の変化</span><span class="en">Structural and functional brain changes underlying parenting behavior</span><span class="sub"><span class="ja">第48回 IBSセミナー</span><span class="en">48th IBS Seminar</span></span></span></li>
+      <li><span class="when">2023.09</span><span class="what"><span class="ja">養育者の心理・行動・神経の個人内変化</span><span class="en">Within-individual change in caregivers' psychology, behavior, and neural responses</span><span class="sub"><span class="ja">日本心理学会 第87回大会</span><span class="en">87th Annual Convention, Japanese Psychological Association</span></span></span></li>
+      <li><span class="when">2023.03</span><span class="what"><span class="ja">乳児の泣き声に対する反応の縦断的変化</span><span class="en">Longitudinal change in responses to infant crying</span><span class="sub"><span class="ja">令和4年度 育志賞研究発表会</span><span class="en">JSPS Ikushi Prize Research Presentation</span></span></span></li>
+      <li><span class="when">2018.06</span><span class="what"><span class="ja">乳児泣き声への反応に養育者の遺伝・環境・状況要因が与える影響</span><span class="en">Genetic, environmental, and situational influences on caregivers' responses to infant crying</span><span class="sub"><span class="ja">作業療法神経科学研究会 第4回学術集会</span><span class="en">4th Annual Meeting, Society of Neuroscience in Occupational Therapy</span></span></span></li>
+    </ul>
+
+    <h3><span class="ja">受賞</span><span class="en">Awards</span></h3>
+    <ul class="plain" style="margin-bottom:40px">
+      <li><span class="when">2024.03</span><span class="what"><span class="ja">国際奨励賞</span><span class="en">International Encouragement Award</span><span class="sub"><span class="ja">日本発達心理学会</span><span class="en">Japan Society of Developmental Psychology</span></span></span></li>
+      <li><span class="when">2024.02</span><span class="what"><span class="ja">第87回大会 優秀発表賞</span><span class="en">Outstanding Presentation Award, 87th Convention</span><span class="sub"><span class="ja">公益社団法人 日本心理学会</span><span class="en">Japanese Psychological Association</span></span></span></li>
+      <li><span class="when">2023.05</span><span class="what"><span class="ja">2022年度（後期）優秀論文賞</span><span class="en">Outstanding Paper Award (FY2022, 2nd half)</span><span class="sub"><span class="ja">福井大学 医学系部門</span><span class="en">University of Fukui, Medical Sciences</span></span></span></li>
+      <li><span class="when">2022.10</span><span class="what"><span class="ja">学術大会優秀発表賞</span><span class="en">Outstanding Convention Presentation Award</span><span class="sub"><span class="ja">公益社団法人 日本心理学会</span><span class="en">Japanese Psychological Association</span></span></span></li>
+      <li><span class="when">2020.03</span><span class="what"><span class="ja">育志賞</span><span class="en">JSPS Ikushi Prize</span><span class="sub"><span class="ja">日本学術振興会</span><span class="en">Japan Society for the Promotion of Science</span></span></span></li>
+      <li><span class="when">2020.03</span><span class="what"><span class="ja">総長賞（学業）</span><span class="en">President's Award (Academic)</span><span class="sub"><span class="ja">京都大学</span><span class="en">Kyoto University</span></span></span></li>
+      <li><span class="when">2019.11</span><span class="what"><span class="ja">教育学研究科長賞（学業）</span><span class="en">Dean's Award (Academic)</span><span class="sub"><span class="ja">京都大学大学院教育学研究科</span><span class="en">Graduate School of Education, Kyoto University</span></span></span></li>
+      <li><span class="when">2018.06</span><span class="what"><span class="ja">奨励賞（基礎研究部門）</span><span class="en">Encouragement Award (Basic Research)</span><span class="sub"><span class="ja">作業療法神経科学研究会</span><span class="en">Society of Neuroscience in Occupational Therapy</span></span></span></li>
+      <li><span class="when">2018</span><span class="what"><span class="ja">優秀発表賞</span><span class="en">Outstanding Presentation Award</span><span class="sub"><span class="ja">日本赤ちゃん学会 若手部会</span><span class="en">Japanese Society of Baby Science, Early Career Section</span></span></span></li>
+    </ul>
+
+    <h3><span class="ja">競争的資金</span><span class="en">Grants</span></h3>
+    <ul class="plain">
+      <li><span class="when">2024–2028</span><span class="what"><span class="ja">個人内変動に着目した養育者の感情形成過程の検討</span><span class="en">Emotion formation in caregivers: A within-individual approach</span><span class="sub"><span class="ja">科研費 若手研究（研究代表者）</span><span class="en">JSPS KAKENHI, Early-Career Scientists (PI)</span></span></span></li>
+      <li><span class="when">2025–2026</span><span class="what"><span class="ja">思春期までの代謝機能障害関連脂肪性肝疾患発症の寄与要因と集団寄与危険割合の解明</span><span class="en">Contributing factors and population attributable fractions for MASLD onset through adolescence</span><span class="sub"><span class="ja">科研費 基盤研究(A)（研究分担者）</span><span class="en">JSPS KAKENHI, Grant-in-Aid (A) (Co-I)</span></span></span></li>
+      <li><span class="when">2023–2025</span><span class="what"><span class="ja">Associations between oxytocin DNA methylation and neural sensitivity to infant distress</span><span class="en">Associations between oxytocin DNA methylation and neural sensitivity to infant distress</span><span class="sub"><span class="ja">University of Denver Faculty Research Fund（研究分担者）</span><span class="en">University of Denver Faculty Research Fund (Co-I)</span></span></span></li>
+      <li><span class="when">2022–2025</span><span class="what"><span class="ja">周産期うつ傾向の発生・継続に関する心理・遺伝・神経機構の解明</span><span class="en">Psychological, genetic, and neural mechanisms of perinatal depressive symptoms</span><span class="sub"><span class="ja">科研費 国際共同研究加速基金（国際共同研究強化(A)）（研究代表者）</span><span class="en">JSPS Fund for the Promotion of Joint International Research (A) (PI)</span></span></span></li>
+      <li><span class="when">2022–2025</span><span class="what"><span class="ja">養育失調をきたす母親の治療・介入法確立のための脳画像エピゲノム解析</span><span class="en">Neuroimaging and epigenomic analysis toward intervention for impaired caregiving</span><span class="sub"><span class="ja">科研費 基盤研究(C)（研究分担者）</span><span class="en">JSPS KAKENHI, Grant-in-Aid (C) (Co-I)</span></span></span></li>
+      <li><span class="when">2021–2024</span><span class="what"><span class="ja">妊娠中から産後のうつ症状の継続において乳児の泣き声が果たす役割の解明</span><span class="en">The role of infant crying in the persistence of depressive symptoms from pregnancy to postpartum</span><span class="sub"><span class="ja">科研費 若手研究（研究代表者）</span><span class="en">JSPS KAKENHI, Early-Career Scientists (PI)</span></span></span></li>
+      <li><span class="when">2020–2023</span><span class="what"><span class="ja">乳児の泣き声に対する反応の養育者内変容メカニズムの解明</span><span class="en">Mechanisms of within-caregiver change in responses to infant crying</span><span class="sub"><span class="ja">科研費 特別研究員奨励費（研究代表者）</span><span class="en">JSPS KAKENHI, Research Fellowship (PD)</span></span></span></li>
+      <li><span class="when">2019–2020</span><span class="what"><span class="ja">乳児の泣きに対する母親の信念についての縦断的調査</span><span class="en">A longitudinal survey of maternal beliefs about infant crying</span><span class="sub"><span class="ja">同志社大学赤ちゃん学研究センター 計画共同研究</span><span class="en">Center for Baby Science, Doshisha University — Collaborative Research Program</span></span></span></li>
+      <li><span class="when">2018–2020</span><span class="what"><span class="ja">虐待の世代間伝達に関する心理・生理学的検討</span><span class="en">Psychological and physiological study of the intergenerational transmission of maltreatment</span><span class="sub"><span class="ja">科研費 特別研究員奨励費（研究代表者）</span><span class="en">JSPS KAKENHI, Research Fellowship (DC2)</span></span></span></li>
+    </ul>
+  </div>
+</section>
+
+<section id="teaching">
+  <div class="wrap">
+    <h2>Teaching</h2>
+    <p>
+      <span class="ja">神戸女学院大学 心理学部にて，発達心理学および心理学研究法に関する授業を担当しています。実証データにもとづいて人の発達を考える力と，自分でデータを取り，分析し，読み解く技術の両方を身につけてもらうことを重視しています。</span>
+      <span class="en">At Kobe College I teach courses in developmental psychology and research methods. My aim is for students to develop both an evidence-based way of thinking about human development and the practical skills to collect, analyze, and interpret data themselves.</span>
+    </p>
+
+    <h3 style="margin-top:32px"><span class="ja">ゼミについて</span><span class="en">Research Seminar</span></h3>
+    <p>
+      <span class="ja">
+        ゼミでは，「養育」「乳幼児」「親子関係」を中心に，発達心理学・認知神経科学の手法を用いた実証研究に取り組みます。
+        質問紙調査，行動実験，生理指標の測定，公開データの二次分析など，問いに応じた方法を一緒に選んでいきます。
+        統計や英語論文に不安があっても大丈夫です。基礎から一緒に積み上げていきましょう。
+      </span>
+      <span class="en">
+        Seminar students conduct empirical research on parenting, infancy, and parent–child relationships,
+        using methods from developmental psychology and cognitive neuroscience — questionnaire studies,
+        behavioral experiments, physiological measures, and secondary analysis of open datasets.
+        No prior confidence with statistics or English-language papers is required; we build these up together.
+      </span>
+    </p>
+
+    <h3 style="margin-top:32px"><span class="ja">担当経験のある科目</span><span class="en">Previously Taught</span></h3>
+    <ul class="plain">
+      <li><span class="when"><span class="ja">名古屋市立大学</span><span class="en">Nagoya City Univ.</span></span><span class="what"><span class="ja">行動科学</span><span class="en">Behavioral Science</span></span></li>
+      <li><span class="when"><span class="ja">人間環境大学</span><span class="en">Univ. of Human Environments</span></span><span class="what"><span class="ja">母子の健康科学特論</span><span class="en">Advanced Maternal and Child Health Science</span></span></li>
+      <li><span class="when"><span class="ja">福井大学</span><span class="en">Univ. of Fukui</span></span><span class="what"><span class="ja">生命複合科学特論</span><span class="en">Advanced Integrated Life Sciences</span></span></li>
+      <li><span class="when"><span class="ja">京都大学</span><span class="en">Kyoto Univ.</span></span><span class="what"><span class="ja">教育心理学実習</span><span class="en">Practicum in Educational Psychology</span></span></li>
+    </ul>
+  </div>
+</section>
+
+<section id="cv">
+  <div class="wrap">
+    <h2>Curriculum Vitae</h2>
+
+    <h3 style="margin-top:8px"><span class="ja">職歴</span><span class="en">Appointments</span></h3>
+    <ul class="plain" style="margin-bottom:40px">
+      <li><span class="when">2026.04–</span><span class="what"><span class="ja">神戸女学院大学 心理学部　専任講師</span><span class="en">Lecturer, Department of Psychology, Kobe College</span></span></li>
+      <li><span class="when">2026.04–</span><span class="what"><span class="ja">名古屋市立大学大学院医学研究科　研究員／名古屋大学 非常勤講師</span><span class="en">Researcher, Nagoya City University ・ Part-time Lecturer, Nagoya University</span></span></li>
+      <li><span class="when">2024.02–</span><span class="what"><span class="ja">University of Denver, Department of Psychology　Special Community Member</span><span class="en">Special Community Member, Department of Psychology, University of Denver</span></span></li>
+      <li><span class="when">2024.03–2026.03</span><span class="what"><span class="ja">名古屋市立大学　特任講師</span><span class="en">Designated Lecturer, Nagoya City University</span></span></li>
+      <li><span class="when">2023.04–2024.01</span><span class="what"><span class="ja">University of Denver　訪問研究員</span><span class="en">Visiting Researcher, University of Denver</span></span></li>
+      <li><span class="when">2022.07–2024.02</span><span class="what"><span class="ja">福井大学　特命助教</span><span class="en">Specially Appointed Assistant Professor, University of Fukui</span></span></li>
+      <li><span class="when">2020.04–2022.06</span><span class="what"><span class="ja">日本学術振興会　特別研究員（PD）</span><span class="en">JSPS Research Fellow (PD)</span></span></li>
+      <li><span class="when">2018.04–2020.03</span><span class="what"><span class="ja">日本学術振興会　特別研究員（DC2）</span><span class="en">JSPS Research Fellow (DC2)</span></span></li>
+    </ul>
+
+    <h3><span class="ja">学歴</span><span class="en">Education</span></h3>
+    <ul class="plain" style="margin-bottom:40px">
+      <li><span class="when">2020.03</span><span class="what"><span class="ja">博士（教育学）　京都大学</span><span class="en">Ph.D. in Education, Kyoto University</span></span></li>
+      <li><span class="when">2015–2020</span><span class="what"><span class="ja">京都大学大学院 教育学研究科 博士後期課程</span><span class="en">Doctoral Program, Graduate School of Education, Kyoto University</span></span></li>
+      <li><span class="when">2011–2015</span><span class="what"><span class="ja">京都大学 教育学部</span><span class="en">B.A., Faculty of Education, Kyoto University</span></span></li>
+    </ul>
+
+    <h3><span class="ja">所属学会・その他</span><span class="en">Affiliations &amp; Other</span></h3>
+    <ul class="plain">
+      <li><span class="when"><span class="ja">所属学会</span><span class="en">Societies</span></span><span class="what"><span class="ja">日本心理学会／日本発達心理学会／日本教育心理学会／日本赤ちゃん学会／日本社会心理学会</span><span class="en">Japanese Psychological Association ・ Japan Society of Developmental Psychology ・ Japanese Association of Educational Psychology ・ Japanese Society of Baby Science ・ Japanese Society of Social Psychology</span></span></li>
+      <li><span class="when"><span class="ja">委員歴</span><span class="en">Service</span></span><span class="what"><span class="ja">日本発達心理学会 インターネット・ニューズ委員会（2025.01–）</span><span class="en">Internet &amp; News Committee, Japan Society of Developmental Psychology (2025–)</span></span></li>
+      <li><span class="when"><span class="ja">資格</span><span class="en">Certification</span></span><span class="what"><span class="ja">専門社会調査士（2024.10–）</span><span class="en">Certified Professional Social Researcher (2024–)</span></span></li>
+    </ul>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <h2>Contact</h2>
+    <p>
+      <span class="ja">共同研究のご相談，取材・講演のご依頼，大学院進学のご相談などは，お気軽にご連絡ください。</span>
+      <span class="en">I welcome inquiries about collaboration, media and speaking requests, and prospective graduate students.</span>
+    </p>
+    <div class="contact-box">
+      <div>
+        <span class="k">EMAIL</span>
+        <!-- ↓ 公開用のアドレスに書き換えてください -->
+        <a href="mailto:your-address@mail.kobe-c.ac.jp">your-address<span aria-hidden="true"> [at] </span>mail.kobe-c.ac.jp</a>
+      </div>
+      <div>
+        <span class="k"><span class="ja">所属</span><span class="en">AFFILIATION</span></span>
+        <span class="ja">神戸女学院大学 心理学部<br>〒662-8505 兵庫県西宮市岡田山4-1</span>
+        <span class="en">Department of Psychology, Kobe College<br>4-1 Okadayama, Nishinomiya, Hyogo 662-8505, Japan</span>
+      </div>
+      <div>
+        <span class="k">LINKS</span>
+        <a href="https://researchmap.jp/hiraoka" target="_blank" rel="noopener">researchmap</a> ／
+        <a href="https://orcid.org/0000-0003-2776-5129" target="_blank" rel="noopener">ORCID</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="ja">© 2026 平岡大樹　最終更新：2026年8月</span>
+    <span class="en">© 2026 Daiki Hiraoka ・ Last updated: August 2026</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var html = document.documentElement;
+  var saved = null;
+  try { saved = null; } catch(e){}
+  // ブラウザ言語からの初期判定（日本語以外なら英語表示）
+  if (!saved && navigator.language && navigator.language.slice(0,2) !== 'ja') {
+    html.setAttribute('data-lang','en');
+    html.setAttribute('lang','en');
+  }
+  document.getElementById('langToggle').addEventListener('click', function(){
+    var next = html.getAttribute('data-lang') === 'ja' ? 'en' : 'ja';
+    html.setAttribute('data-lang', next);
+    html.setAttribute('lang', next);
+  });
+
+  // 論文フィルタ
+  var buttons = document.querySelectorAll('.pub-filter button');
+  buttons.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var f = btn.getAttribute('data-filter');
+      buttons.forEach(function(b){ b.setAttribute('aria-pressed', String(b === btn)); });
+      document.querySelectorAll('ol.pubs li').forEach(function(li){
+        var kinds = (li.getAttribute('data-kind') || '').split(' ');
+        li.style.display = (f === 'all' || kinds.indexOf(f) !== -1) ? '' : 'none';
+      });
+      // 空になった年グループを隠す
+      document.querySelectorAll('.yeargroup').forEach(function(g){
+        var visible = Array.prototype.some.call(g.querySelectorAll('ol.pubs li'), function(li){
+          return li.style.display !== 'none';
+        });
+        g.style.display = visible ? '' : 'none';
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>
