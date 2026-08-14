@@ -114,13 +114,19 @@ h2{
 h3{font-family:var(--serif); font-size:1.08rem; margin:0 0 8px; font-weight:600; letter-spacing:.02em}
 p{margin:0 0 1em; color:var(--ink-2)}
 p.lead{font-size:1.03rem; color:var(--ink)}
+p.soft{font-size:.88rem; color:var(--ink-3); margin-top:-.2em}
 
-.themes{display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:18px; margin-top:28px}
+.themes{margin-top:36px}
 .theme{
-  background:var(--card); border:1px solid var(--rule); border-radius:12px; padding:22px 22px 18px;
+  display:grid; grid-template-columns:34px 1fr; gap:0 18px;
+  padding:20px 0; border-top:1px solid var(--rule);
 }
-.theme .num{font-size:.72rem; letter-spacing:.14em; color:var(--ink-3); display:block; margin-bottom:10px}
-.theme p{font-size:.9rem; margin:0; color:var(--ink-2)}
+.theme .num{
+  font-family:var(--serif); font-size:.9rem; color:var(--ink-3);
+  grid-row:span 2; padding-top:2px;
+}
+.theme h3{margin:0 0 4px}
+.theme p{font-size:.92rem; margin:0; color:var(--ink-2)}
 
 /* publications */
 .pub-filter{display:flex; gap:8px; flex-wrap:wrap; margin-bottom:24px}
@@ -172,6 +178,7 @@ ul.plain .sub{color:var(--ink-3); font-size:.83rem; display:block; margin-top:2p
   display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:22px;
 }
 .contact-box .k{font-size:.74rem; letter-spacing:.12em; color:var(--ink-3); display:block; margin-bottom:4px}
+.contact-box a+a{margin-left:16px}
 footer{padding:36px 0 60px; color:var(--ink-3); font-size:.8rem}
 .note{font-size:.83rem; color:var(--ink-3)}
 </style>
@@ -210,7 +217,6 @@ footer{padding:36px 0 60px; color:var(--ink-3); font-size:.8rem}
           <li><span class="ja">養育者の心理</span><span class="en">Caregiver psychology</span></li>
           <li><span class="ja">乳児の泣き声への反応</span><span class="en">Responses to infant crying</span></li>
           <li><span class="ja">親になる過程</span><span class="en">Transition to parenthood</span></li>
-          <li><span class="ja">縦断データ解析</span><span class="en">Longitudinal data analysis</span></li>
         </ul>
       </dd>
     </dl>
@@ -230,53 +236,62 @@ footer{padding:36px 0 60px; color:var(--ink-3); font-size:.8rem}
     <h2>About &amp; Research</h2>
     <p class="lead">
       <span class="ja">
-        「人は，どのようにして親になっていくのか」。これが私の研究の中心にある問いです。
-        乳児の泣き声という，養育者にとって最も切実で，時に最も過酷な刺激への反応を手がかりに，
-        養育者の心理・行動・脳・遺伝の変化を，実験と縦断調査の両面から検討しています。
+        乳児の泣き声という，養育者にとって切実で，時には負担ともなる刺激への反応。
+        その背後にあるメカニズムを知ることが，私の研究の目的です。
       </span>
       <span class="en">
-        My research asks how people <em>become</em> parents. Using infant crying — one of the most
-        urgent and, at times, most aversive signals a caregiver encounters — as a window, I study how
-        caregivers' psychology, behavior, brain, and epigenetic profiles change across the transition
-        to parenthood, combining laboratory experiments with longitudinal cohort designs.
+        Infant crying is a signal that is urgent for caregivers and, at times, a burden.
+        My research seeks to understand the mechanisms behind how caregivers respond to it.
       </span>
     </p>
     <p>
       <span class="ja">
         従来の養育研究の多くは，養育者の反応を「個人差」として固定的に捉えてきました。
-        これに対して私は，同じ養育者のなかで反応が時間とともに変わっていく<strong>個人内変動</strong>に着目し，
+        私は，同じ養育者のなかで反応が時間とともに変わっていく<strong>個人内変動</strong>に着目し，
         その変化を生み出す心理的・神経的・遺伝的メカニズムを明らかにしようとしています。
-        産後うつや不適切な養育の理解と予防に，基礎研究の側から貢献することを目指しています。
+        対象とする時間の幅は，状況レベルの短期的な変化から，数か月・数年単位の長期的な変遷にまで及びます。
       </span>
       <span class="en">
         Much of the parenting literature treats caregivers' responses as a stable individual difference.
         I instead focus on <strong>within-individual variation</strong> — how the same caregiver's responses shift over
-        weeks and months — and on the psychological, neural, and genetic mechanisms behind that shift.
-        The long-term aim is to inform the prevention of postpartum depression and child maltreatment
-        from a basic-science perspective.
+        time — and on the psychological, neural, and genetic mechanisms that produce that change.
+        The timescales range from moment-to-moment situational shifts to trajectories spanning months and years.
       </span>
+    </p>
+    <p>
+      <span class="ja">
+        こうした理解を通して，産後うつや絆感情の困難の軽減に，基礎研究の側から貢献することを目指しています。
+      </span>
+      <span class="en">
+        Through this understanding, I aim to contribute from a basic-science perspective to alleviating
+        postpartum depression and difficulties in mother-to-infant bonding.
+      </span>
+    </p>
+    <p class="soft">
+      <span class="ja">大学院進学やポスドクを検討されている方は，お気軽に<a href="#contact">ご連絡</a>ください。</span>
+      <span class="en">Prospective graduate students and postdocs are welcome to <a href="#contact">get in touch</a>.</span>
     </p>
 
     <div class="themes">
       <div class="theme">
         <span class="num">01</span>
         <h3><span class="ja">乳児の泣き声への反応</span><span class="en">Responding to infant cries</span></h3>
-        <p><span class="ja">認知的負荷，配偶者の存在，被養育経験，オキシトシン受容体遺伝子多型などが，泣き声への共感・接近回避行動・生理反応をどう調整するのかを，実験室実験で検討しています。</span><span class="en">Laboratory experiments on how cognitive load, spousal presence, childhood adversity, and OXTR genotype modulate empathy, approach–avoidance behavior, and physiological responses to infant cries.</span></p>
+        <p><span class="ja">実験的に操作した状況が，泣き声への共感・行動・生理反応をどう調整するのかを，実験室実験で検討しています。</span><span class="en">Laboratory experiments examining how experimentally manipulated situations modulate empathy, behavior, and physiological responses to infant cries.</span></p>
       </div>
       <div class="theme">
         <span class="num">02</span>
         <h3><span class="ja">親になる過程の縦断的検討</span><span class="en">The transition to parenthood</span></h3>
-        <p><span class="ja">初産の母親を対象に，泣きへの注意バイアスや信念が産後どのように変化するかを追跡。母子結合と産後抑うつの関係を，個人内・個人間に分離して分析しています。</span><span class="en">Following first-time mothers to track change in attentional bias and beliefs about crying, and disentangling within- from between-person associations between mother-to-infant bonding and postpartum depression.</span></p>
+        <p><span class="ja">泣きへの注意バイアスや信念が，産後どのように変化するかを追跡しています。</span><span class="en">Tracking how attentional bias and beliefs about infant crying change over the postpartum period.</span></p>
       </div>
       <div class="theme">
         <span class="num">03</span>
-        <h3><span class="ja">養育の神経・エピジェネティック基盤</span><span class="en">Neural and epigenetic bases</span></h3>
-        <p><span class="ja">fMRI・脳形態計測とDNAメチル化解析を組み合わせ，泣き声処理に関わる脳活動と，オキシトシン系のエピジェネティックな個人差との関連を検討しています。</span><span class="en">Combining fMRI and structural MRI with DNA methylation analysis to link cry-evoked brain responses to epigenetic variation in the oxytocin system.</span></p>
+        <h3><span class="ja">養育の神経・遺伝基盤</span><span class="en">Neural and genetic bases</span></h3>
+        <p><span class="ja">fMRI・脳形態計測やDNAメチル化解析などにより，泣き声処理に関わる脳・心理・遺伝の関連を検討しています。</span><span class="en">Examining links among brain, psychology, and genetics in the processing of infant cries, using fMRI, structural MRI, and DNA methylation analysis.</span></p>
       </div>
       <div class="theme">
         <span class="num">04</span>
-        <h3><span class="ja">大規模コホートと縦断データ解析</span><span class="en">Large cohorts &amp; longitudinal methods</span></h3>
-        <p><span class="ja">エコチル調査（JECS）やABCD研究などの大規模縦断データを用いた解析に加え，縦断データ解析手法そのものの解説・教育にも取り組んでいます。</span><span class="en">Analyses of large-scale cohorts including the Japan Environment and Children's Study (JECS) and the ABCD Study, alongside methodological writing and teaching on longitudinal data analysis.</span></p>
+        <h3><span class="ja">大規模縦断データを用いた検討</span><span class="en">Large-scale longitudinal cohorts</span></h3>
+        <p><span class="ja">エコチル調査（JECS）やABCD Studyなどの大規模縦断データを用いた解析。親と子どもの双方向的な発達や，疫学的な検討に取り組んでいます。</span><span class="en">Analyses of large-scale longitudinal cohorts including the Japan Environment and Children's Study (JECS) and the ABCD Study, addressing bidirectional parent–child development and epidemiological questions.</span></p>
       </div>
     </div>
   </div>
@@ -286,8 +301,8 @@ footer{padding:36px 0 60px; color:var(--ink-3); font-size:.8rem}
   <div class="wrap">
     <h2>Publications</h2>
     <p class="note">
-      <span class="ja">査読付き原著論文を中心に掲載しています。<span class="badge first">筆頭</span>は筆頭著者論文。最新の一覧は <a href="https://researchmap.jp/hiraoka" target="_blank" rel="noopener">researchmap</a> をご覧ください。</span>
-      <span class="en">Peer-reviewed articles. <span class="badge first">first</span> indicates first-authored work. See <a href="https://researchmap.jp/hiraoka" target="_blank" rel="noopener">researchmap</a> for the complete list.</span>
+      <span class="ja">査読付き原著論文を中心に掲載しています。<span class="badge first">筆頭</span> は筆頭著者論文。最新の一覧は <a href="https://researchmap.jp/hiraoka" target="_blank" rel="noopener">researchmap</a> をご覧ください。</span>
+      <span class="en">Peer-reviewed articles. <span class="badge first">1st</span> indicates first-authored work. See <a href="https://researchmap.jp/hiraoka" target="_blank" rel="noopener">researchmap</a> for the complete list.</span>
     </p>
 
     <div class="pub-filter">
@@ -300,12 +315,12 @@ footer{padding:36px 0 60px; color:var(--ink-3); font-size:.8rem}
       <div class="yr">2026</div>
       <ol class="pubs">
         <li data-kind="first">
-          <span class="badge first">1st</span><span class="t">The impact of labor induction in vaginal delivery on the development of mother-to-infant bonding and the mediating role of breastfeeding practices: the Japan Environment and Children's Study</span>
+          <span class="badge first"><span class="ja">筆頭</span><span class="en">1st</span></span><span class="t">The impact of labor induction in vaginal delivery on the development of mother-to-infant bonding and the mediating role of breastfeeding practices: the Japan Environment and Children's Study</span>
           <span class="a"><strong>Hiraoka, D.</strong>, Tachi, A., Takahashi, Y., Kato, S., Ito, Y., Ohya, Y., Saitoh, S., Sugiura-Ogasawara, M., &amp; Kamijima, M.</span>
           <span class="j">BMC Pregnancy and Childbirth</span>, 2026.<a class="doi" href="https://doi.org/10.1186/s12884-026-09574-4" target="_blank" rel="noopener">DOI</a>
         </li>
         <li data-kind="first">
-          <span class="badge first">1st</span><span class="t">Investigating the role of executive function in brain responses to infant crying among new parents</span>
+          <span class="badge first"><span class="ja">筆頭</span><span class="en">1st</span></span><span class="t">Investigating the role of executive function in brain responses to infant crying among new parents</span>
           <span class="a"><strong>Hiraoka, D.</strong>, Xie, Y., Powers, S., Patterson, G., Chin, J., Brady, N., Yeh, T., &amp; Kim, P.</span>
           <span class="j">Social Cognitive and Affective Neuroscience</span>, 21(1), 2026.<a class="doi" href="https://doi.org/10.1093/scan/nsag002" target="_blank" rel="noopener">DOI</a>
         </li>
@@ -336,7 +351,7 @@ footer{padding:36px 0 60px; color:var(--ink-3); font-size:.8rem}
           <span class="j">PLOS ONE</span>, 20(5), e0321952, 2025.<a class="doi" href="https://doi.org/10.1371/journal.pone.0321952" target="_blank" rel="noopener">DOI</a>
         </li>
         <li data-kind="first ja">
-          <span class="badge first">1st</span><span class="badge">招待</span><span class="t">コホート研究における縦断データの解析入門</span>
+          <span class="badge first"><span class="ja">筆頭</span><span class="en">1st</span></span><span class="badge"><span class="ja">招待</span><span class="en">Invited</span></span><span class="t">コホート研究における縦断データの解析入門</span>
           <span class="a">平岡大樹</span>
           <span class="j">子どもの健康科学</span>, 26(2), 54, 2025.（査読有・招待論文）
         </li>
@@ -347,12 +362,12 @@ footer{padding:36px 0 60px; color:var(--ink-3); font-size:.8rem}
       <div class="yr">2024</div>
       <ol class="pubs">
         <li data-kind="first">
-          <span class="badge first">1st</span><span class="t">Within-individual relationships between mother-to-infant bonding and postpartum depressive symptoms: A longitudinal study</span>
+          <span class="badge first"><span class="ja">筆頭</span><span class="en">1st</span></span><span class="t">Within-individual relationships between mother-to-infant bonding and postpartum depressive symptoms: A longitudinal study</span>
           <span class="a"><strong>Hiraoka, D.</strong>, Kawanami, A., Sakurai, K., &amp; Mori, C.</span>
           <span class="j">Psychological Medicine</span>, 2024.<a class="doi" href="https://doi.org/10.1017/S0033291723003707" target="_blank" rel="noopener">DOI</a>
         </li>
         <li data-kind="first ja">
-          <span class="badge first">1st</span><span class="badge">招待</span><span class="t">親になること：計量書誌学分析を用いた研究動向と展望</span>
+          <span class="badge first"><span class="ja">筆頭</span><span class="en">1st</span></span><span class="badge"><span class="ja">招待</span><span class="en">Invited</span></span><span class="t">親になること：計量書誌学分析を用いた研究動向と展望</span>
           <span class="a">平岡大樹</span>
           <span class="j">ベビーサイエンス</span>, 23, 21–45, 2024.（査読有・招待論文）
         </li>
@@ -363,12 +378,12 @@ footer{padding:36px 0 60px; color:var(--ink-3); font-size:.8rem}
       <div class="yr">2023</div>
       <ol class="pubs">
         <li data-kind="first">
-          <span class="badge first">1st</span><span class="t">Longitudinal changes in attention bias to infant crying in primiparous mothers</span>
+          <span class="badge first"><span class="ja">筆頭</span><span class="en">1st</span></span><span class="t">Longitudinal changes in attention bias to infant crying in primiparous mothers</span>
           <span class="a"><strong>Hiraoka, D.</strong>, Makita, K., Sakakibara, N., Morioka, S., Orisaka, M., Yoshida, Y., &amp; Tomoda, A.</span>
           <span class="j">Frontiers in Behavioral Neuroscience</span>, 17, 1192275, 2023.<a class="doi" href="https://doi.org/10.3389/fnbeh.2023.1192275" target="_blank" rel="noopener">DOI</a>
         </li>
         <li data-kind="first">
-          <span class="badge first">1st</span><span class="t">Effects of prenatal cannabis exposure on developmental trajectory of cognitive ability and brain volumes in the Adolescent Brain Cognitive Development (ABCD) study</span>
+          <span class="badge first"><span class="ja">筆頭</span><span class="en">1st</span></span><span class="t">Effects of prenatal cannabis exposure on developmental trajectory of cognitive ability and brain volumes in the Adolescent Brain Cognitive Development (ABCD) study</span>
           <span class="a"><strong>Hiraoka, D.</strong>, Makita, K., Hamatani, S., Tomoda, A., &amp; Mizuno, Y.</span>
           <span class="j">Developmental Cognitive Neuroscience</span>, 60, 101209, 2023.<a class="doi" href="https://doi.org/10.1016/j.dcn.2023.101209" target="_blank" rel="noopener">DOI</a>
         </li>
@@ -383,9 +398,9 @@ footer{padding:36px 0 60px; color:var(--ink-3); font-size:.8rem}
     <div class="yeargroup">
       <div class="yr">2022</div>
       <ol class="pubs">
-        <li data-kind="co">
-          <span class="t">Longitudinal impact of COVID-19 pandemic on mental health of children in the ABCD study cohort</span>
-          <span class="a">Hamatani, S., <strong>Hiraoka, D.</strong>, Makita, K., Tomoda, A., &amp; Mizuno, Y.</span>
+        <li data-kind="first">
+          <span class="badge first"><span class="ja">筆頭</span><span class="en">1st</span></span><span class="t">Longitudinal impact of COVID-19 pandemic on mental health of children in the ABCD study cohort</span>
+          <span class="a">Hamatani, S., <strong>Hiraoka, D.</strong>, Makita, K., Tomoda, A., &amp; Mizuno, Y.<span class="ja">（共同筆頭著者）</span><span class="en"> (equal contribution)</span></span>
           <span class="j">Scientific Reports</span>, 12, 19601, 2022.<a class="doi" href="https://doi.org/10.1038/s41598-022-22694-z" target="_blank" rel="noopener">DOI</a>
         </li>
         <li data-kind="co">
@@ -400,7 +415,7 @@ footer{padding:36px 0 60px; color:var(--ink-3); font-size:.8rem}
       <div class="yr">2021</div>
       <ol class="pubs">
         <li data-kind="first">
-          <span class="badge first">1st</span><span class="t">Longitudinal study of maternal beliefs about infant crying during the postpartum period: Interplay with infant's temperament</span>
+          <span class="badge first"><span class="ja">筆頭</span><span class="en">1st</span></span><span class="t">Longitudinal study of maternal beliefs about infant crying during the postpartum period: Interplay with infant's temperament</span>
           <span class="a"><strong>Hiraoka, D.</strong>, Nomura, M., &amp; Kato, M.</span>
           <span class="j">Frontiers in Psychology</span>, 12, 786391, 2021.<a class="doi" href="https://doi.org/10.3389/fpsyg.2021.786391" target="_blank" rel="noopener">DOI</a>
         </li>
@@ -420,7 +435,7 @@ footer{padding:36px 0 60px; color:var(--ink-3); font-size:.8rem}
           <span class="j">Human Brain Mapping</span>, 2021.<a class="doi" href="https://doi.org/10.1002/hbm.25594" target="_blank" rel="noopener">DOI</a>
         </li>
         <li data-kind="first ja">
-          <span class="badge first">1st</span><span class="badge">招待</span><span class="t">非定型な泣き声を形成する要因の理解と介入可能性</span>
+          <span class="badge first"><span class="ja">筆頭</span><span class="en">1st</span></span><span class="badge"><span class="ja">招待</span><span class="en">Invited</span></span><span class="t">非定型な泣き声を形成する要因の理解と介入可能性</span>
           <span class="a">平岡大樹</span>
           <span class="j">ベビーサイエンス</span>, 20, 37–38, 2021.（査読有・招待論文）
         </li>
@@ -431,17 +446,17 @@ footer{padding:36px 0 60px; color:var(--ink-3); font-size:.8rem}
       <div class="yr">2020</div>
       <ol class="pubs">
         <li data-kind="first">
-          <span class="badge first">1st</span><span class="t">Relationship between oxytocin and maternal approach behaviors to infants' vocalizations</span>
+          <span class="badge first"><span class="ja">筆頭</span><span class="en">1st</span></span><span class="t">Relationship between oxytocin and maternal approach behaviors to infants' vocalizations</span>
           <span class="a"><strong>Hiraoka, D.</strong>, Ooishi, Y., Mugitani, R., &amp; Nomura, M.</span>
           <span class="j">Comprehensive Psychoneuroendocrinology</span>, 4, 100010, 2020.<a class="doi" href="https://doi.org/10.1016/j.cpnec.2020.100010" target="_blank" rel="noopener">DOI</a>
         </li>
         <li data-kind="first">
-          <span class="badge first">1st</span><span class="t">The influence of cognitive load on maternal postural sway and heart rate in response to infant vocalizations</span>
+          <span class="badge first"><span class="ja">筆頭</span><span class="en">1st</span></span><span class="t">The influence of cognitive load on maternal postural sway and heart rate in response to infant vocalizations</span>
           <span class="a"><strong>Hiraoka, D.</strong>, &amp; Nomura, M.</span>
           <span class="j">Developmental Psychobiology</span>, 62(6), 829–840, 2020.<a class="doi" href="https://doi.org/10.1002/dev.21961" target="_blank" rel="noopener">DOI</a>
         </li>
         <li data-kind="first">
-          <span class="badge first">1st</span><span class="t">Relationship between parenting stress and school closures due to the COVID-19 pandemic</span>
+          <span class="badge first"><span class="ja">筆頭</span><span class="en">1st</span></span><span class="t">Relationship between parenting stress and school closures due to the COVID-19 pandemic</span>
           <span class="a"><strong>Hiraoka, D.</strong>, &amp; Tomoda, A.</span>
           <span class="j">Psychiatry and Clinical Neurosciences</span>, 74(9), 497–498, 2020.<a class="doi" href="https://doi.org/10.1111/pcn.13088" target="_blank" rel="noopener">DOI</a>
         </li>
@@ -452,22 +467,22 @@ footer{padding:36px 0 60px; color:var(--ink-3); font-size:.8rem}
       <div class="yr">2019</div>
       <ol class="pubs">
         <li data-kind="first">
-          <span class="badge first">1st</span><span class="t">Maternal childhood adversity, OXTR genotype and cognitive load impact on perceptual and behavioral responses to infant crying</span>
+          <span class="badge first"><span class="ja">筆頭</span><span class="en">1st</span></span><span class="t">Maternal childhood adversity, OXTR genotype and cognitive load impact on perceptual and behavioral responses to infant crying</span>
           <span class="a"><strong>Hiraoka, D.</strong>, &amp; Nomura, M.</span>
           <span class="j">Psychoneuroendocrinology</span>, 104, 195–202, 2019.<a class="doi" href="https://doi.org/10.1016/j.psyneuen.2019.03.005" target="_blank" rel="noopener">DOI</a>
         </li>
         <li data-kind="first">
-          <span class="badge first">1st</span><span class="t">Differential effects of infant vocalizations on approach-avoidance postural movements in mothers</span>
+          <span class="badge first"><span class="ja">筆頭</span><span class="en">1st</span></span><span class="t">Differential effects of infant vocalizations on approach-avoidance postural movements in mothers</span>
           <span class="a"><strong>Hiraoka, D.</strong>, Ooishi, Y., Mugitani, R., &amp; Nomura, M.</span>
           <span class="j">Frontiers in Psychology</span>, 10, 1378, 2019.<a class="doi" href="https://doi.org/10.3389/fpsyg.2019.01378" target="_blank" rel="noopener">DOI</a>
         </li>
         <li data-kind="first">
-          <span class="badge first">1st</span><span class="t">Spousal presence modulates salivary alpha-amylase responses to infant cry in mothers with high attachment insecurity</span>
+          <span class="badge first"><span class="ja">筆頭</span><span class="en">1st</span></span><span class="t">Spousal presence modulates salivary alpha-amylase responses to infant cry in mothers with high attachment insecurity</span>
           <span class="a"><strong>Hiraoka, D.</strong>, Miyasaka, M., &amp; Nomura, M.</span>
           <span class="j">Parenting: Science and Practice</span>, 19(1–2), 5–21, 2019.
         </li>
         <li data-kind="first">
-          <span class="badge first">1st</span><span class="t">A possible mechanism of stress-relieving effects of spousal presence and implications for future infant cry research</span>
+          <span class="badge first"><span class="ja">筆頭</span><span class="en">1st</span></span><span class="t">A possible mechanism of stress-relieving effects of spousal presence and implications for future infant cry research</span>
           <span class="a"><strong>Hiraoka, D.</strong>, Miyasaka, M., &amp; Nomura, M.</span>
           <span class="j">Parenting: Science and Practice</span>, 19(1–2), 34–38, 2019.
         </li>
@@ -478,12 +493,12 @@ footer{padding:36px 0 60px; color:var(--ink-3); font-size:.8rem}
       <div class="yr">2016–17</div>
       <ol class="pubs">
         <li data-kind="first">
-          <span class="badge first">1st</span><span class="t">Would situational stress be harmful for anyone? The influence of situational factors and trait empathy on women's response to infant crying</span>
+          <span class="badge first"><span class="ja">筆頭</span><span class="en">1st</span></span><span class="t">Would situational stress be harmful for anyone? The influence of situational factors and trait empathy on women's response to infant crying</span>
           <span class="a"><strong>Hiraoka, D.</strong>, &amp; Nomura, M.</span>
           <span class="j">Infant Behavior and Development</span>, 2017.<a class="doi" href="https://doi.org/10.1016/j.infbeh.2017.04.005" target="_blank" rel="noopener">DOI</a>
         </li>
         <li data-kind="first">
-          <span class="badge first">1st</span><span class="t">The influence of cognitive load on empathy and intention in response to infant crying</span>
+          <span class="badge first"><span class="ja">筆頭</span><span class="en">1st</span></span><span class="t">The influence of cognitive load on empathy and intention in response to infant crying</span>
           <span class="a"><strong>Hiraoka, D.</strong>, &amp; Nomura, M.</span>
           <span class="j">Scientific Reports</span>, 6, 28247, 2016.<a class="doi" href="https://doi.org/10.1038/srep28247" target="_blank" rel="noopener">DOI</a>
         </li>
@@ -498,6 +513,7 @@ footer{padding:36px 0 60px; color:var(--ink-3); font-size:.8rem}
 
     <h3 style="margin-top:8px"><span class="ja">招待講演・学会発表（抜粋）</span><span class="en">Selected Talks</span></h3>
     <ul class="plain" style="margin-bottom:40px">
+      <li><span class="when">2025.11</span><span class="what"><span class="badge"><span class="ja">招待</span><span class="en">Invited</span></span><span class="ja">養育者の脳と情動 ― 子育ての「楽さ」を支える適応メカニズム ―</span><span class="en">The caregiver's brain and emotion: Adaptive mechanisms supporting the "ease" of child-rearing</span><span class="sub"><span class="ja">第14回 日本情動学会（名古屋市立大学，名古屋）　公開シンポジウム「育つ・育てるは楽しい」　口頭発表</span><span class="en">14th Annual Meeting of the Japan Society of Emotion (Nagoya City University, Nagoya) — Public symposium, oral presentation</span></span></span></li>
       <li><span class="when">2024.07</span><span class="what"><span class="ja">養育行動の背景にある脳構造・機能の変化</span><span class="en">Structural and functional brain changes underlying parenting behavior</span><span class="sub"><span class="ja">第48回 IBSセミナー</span><span class="en">48th IBS Seminar</span></span></span></li>
       <li><span class="when">2023.09</span><span class="what"><span class="ja">養育者の心理・行動・神経の個人内変化</span><span class="en">Within-individual change in caregivers' psychology, behavior, and neural responses</span><span class="sub"><span class="ja">日本心理学会 第87回大会</span><span class="en">87th Annual Convention, Japanese Psychological Association</span></span></span></li>
       <li><span class="when">2023.03</span><span class="what"><span class="ja">乳児の泣き声に対する反応の縦断的変化</span><span class="en">Longitudinal change in responses to infant crying</span><span class="sub"><span class="ja">令和4年度 育志賞研究発表会</span><span class="en">JSPS Ikushi Prize Research Presentation</span></span></span></li>
@@ -507,7 +523,7 @@ footer{padding:36px 0 60px; color:var(--ink-3); font-size:.8rem}
     <h3><span class="ja">受賞</span><span class="en">Awards</span></h3>
     <ul class="plain" style="margin-bottom:40px">
       <li><span class="when">2024.03</span><span class="what"><span class="ja">国際奨励賞</span><span class="en">International Encouragement Award</span><span class="sub"><span class="ja">日本発達心理学会</span><span class="en">Japan Society of Developmental Psychology</span></span></span></li>
-      <li><span class="when">2024.02</span><span class="what"><span class="ja">第87回大会 優秀発表賞</span><span class="en">Outstanding Presentation Award, 87th Convention</span><span class="sub"><span class="ja">公益社団法人 日本心理学会</span><span class="en">Japanese Psychological Association</span></span></span></li>
+      <li><span class="when">2024.02</span><span class="what"><span class="ja">学術大会優秀発表賞（第87回大会）</span><span class="en">Outstanding Convention Presentation Award (87th Convention)</span><span class="sub"><span class="ja">公益社団法人 日本心理学会</span><span class="en">Japanese Psychological Association</span></span></span></li>
       <li><span class="when">2023.05</span><span class="what"><span class="ja">2022年度（後期）優秀論文賞</span><span class="en">Outstanding Paper Award (FY2022, 2nd half)</span><span class="sub"><span class="ja">福井大学 医学系部門</span><span class="en">University of Fukui, Medical Sciences</span></span></span></li>
       <li><span class="when">2022.10</span><span class="what"><span class="ja">学術大会優秀発表賞</span><span class="en">Outstanding Convention Presentation Award</span><span class="sub"><span class="ja">公益社団法人 日本心理学会</span><span class="en">Japanese Psychological Association</span></span></span></li>
       <li><span class="when">2020.03</span><span class="what"><span class="ja">育志賞</span><span class="en">JSPS Ikushi Prize</span><span class="sub"><span class="ja">日本学術振興会</span><span class="en">Japan Society for the Promotion of Science</span></span></span></li>
@@ -536,8 +552,8 @@ footer{padding:36px 0 60px; color:var(--ink-3); font-size:.8rem}
   <div class="wrap">
     <h2>Teaching</h2>
     <p>
-      <span class="ja">神戸女学院大学 心理学部にて，発達心理学および心理学研究法に関する授業を担当しています。実証データにもとづいて人の発達を考える力と，自分でデータを取り，分析し，読み解く技術の両方を身につけてもらうことを重視しています。</span>
-      <span class="en">At Kobe College I teach courses in developmental psychology and research methods. My aim is for students to develop both an evidence-based way of thinking about human development and the practical skills to collect, analyze, and interpret data themselves.</span>
+      <span class="ja">神戸女学院大学 心理学部にて，発達心理学や認知科学，ITに関する授業を担当しています。発達変化を見る視点と，データを分析し読み解く技術の両方を身につけてもらうことを重視しています。</span>
+      <span class="en">At Kobe College I teach courses in developmental psychology, cognitive science, and information technology. My aim is for students to acquire both a perspective for observing developmental change and the practical skills to analyze and interpret data.</span>
     </p>
 
     <h3 style="margin-top:32px"><span class="ja">ゼミについて</span><span class="en">Research Seminar</span></h3>
@@ -581,17 +597,10 @@ footer{padding:36px 0 60px; color:var(--ink-3); font-size:.8rem}
       <li><span class="when">2018.04–2020.03</span><span class="what"><span class="ja">日本学術振興会　特別研究員（DC2）</span><span class="en">JSPS Research Fellow (DC2)</span></span></li>
     </ul>
 
-    <h3><span class="ja">学歴</span><span class="en">Education</span></h3>
-    <ul class="plain" style="margin-bottom:40px">
-      <li><span class="when">2020.03</span><span class="what"><span class="ja">博士（教育学）　京都大学</span><span class="en">Ph.D. in Education, Kyoto University</span></span></li>
-      <li><span class="when">2015–2020</span><span class="what"><span class="ja">京都大学大学院 教育学研究科 博士後期課程</span><span class="en">Doctoral Program, Graduate School of Education, Kyoto University</span></span></li>
-      <li><span class="when">2011–2015</span><span class="what"><span class="ja">京都大学 教育学部</span><span class="en">B.A., Faculty of Education, Kyoto University</span></span></li>
-    </ul>
-
     <h3><span class="ja">所属学会・その他</span><span class="en">Affiliations &amp; Other</span></h3>
     <ul class="plain">
-      <li><span class="when"><span class="ja">所属学会</span><span class="en">Societies</span></span><span class="what"><span class="ja">日本心理学会／日本発達心理学会／日本教育心理学会／日本赤ちゃん学会／日本社会心理学会</span><span class="en">Japanese Psychological Association ・ Japan Society of Developmental Psychology ・ Japanese Association of Educational Psychology ・ Japanese Society of Baby Science ・ Japanese Society of Social Psychology</span></span></li>
-      <li><span class="when"><span class="ja">委員歴</span><span class="en">Service</span></span><span class="what"><span class="ja">日本発達心理学会 インターネット・ニューズ委員会（2025.01–）</span><span class="en">Internet &amp; News Committee, Japan Society of Developmental Psychology (2025–)</span></span></li>
+      <li><span class="when"><span class="ja">所属学会</span><span class="en">Societies</span></span><span class="what"><span class="ja">日本心理学会／日本発達心理学会／日本赤ちゃん学会／日本社会心理学会</span><span class="en">Japanese Psychological Association ・ Japan Society of Developmental Psychology ・ Japanese Society of Baby Science ・ Japanese Society of Social Psychology</span></span></li>
+      <li><span class="when"><span class="ja">委員歴</span><span class="en">Service</span></span><span class="what"><span class="ja">日本発達心理学会 インターネット・ニューズ委員会（2025.01–，2026年より委員長）</span><span class="en">Internet &amp; News Committee, Japan Society of Developmental Psychology (2025–; Chair from 2026)</span></span></li>
       <li><span class="when"><span class="ja">資格</span><span class="en">Certification</span></span><span class="what"><span class="ja">専門社会調査士（2024.10–）</span><span class="en">Certified Professional Social Researcher (2024–)</span></span></li>
     </ul>
   </div>
@@ -600,20 +609,10 @@ footer{padding:36px 0 60px; color:var(--ink-3); font-size:.8rem}
 <section id="contact">
   <div class="wrap">
     <h2>Contact</h2>
-    <p>
-      <span class="ja">共同研究のご相談，取材・講演のご依頼，大学院進学のご相談などは，お気軽にご連絡ください。</span>
-      <span class="en">I welcome inquiries about collaboration, media and speaking requests, and prospective graduate students.</span>
-    </p>
     <div class="contact-box">
       <div>
         <span class="k">EMAIL</span>
-        <!-- ↓ 公開用のアドレスに書き換えてください -->
-        <a href="mailto:your-address@mail.kobe-c.ac.jp">your-address<span aria-hidden="true"> [at] </span>mail.kobe-c.ac.jp</a>
-      </div>
-      <div>
-        <span class="k"><span class="ja">所属</span><span class="en">AFFILIATION</span></span>
-        <span class="ja">神戸女学院大学 心理学部<br>〒662-8505 兵庫県西宮市岡田山4-1</span>
-        <span class="en">Department of Psychology, Kobe College<br>4-1 Okadayama, Nishinomiya, Hyogo 662-8505, Japan</span>
+        <a href="mailto:hiraoka@mail.kobe-c.ac.jp">hiraoka<span aria-hidden="true"> [at] </span>mail.kobe-c.ac.jp</a>
       </div>
       <div>
         <span class="k">LINKS</span>
