@@ -9,6 +9,9 @@
 <meta property="og:description" content="発達心理学・認知神経科学｜養育行動・養育者心理・乳児の泣き声への反応・縦断研究">
 <meta property="og:type" content="profile">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=Noto+Serif+JP:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
   --ink:#1c1f23;
@@ -20,6 +23,8 @@
   --accent:#1f5f63;
   --accent-soft:#e7f0f0;
   --max:920px;
+  --sans:"Noto Sans JP","Helvetica Neue",Arial,sans-serif;
+  --serif:"Noto Serif JP",Georgia,"Times New Roman",serif;
 }
 @media (prefers-color-scheme: dark){
   :root{
@@ -32,10 +37,10 @@
 html{scroll-behavior:smooth; scroll-padding-top:78px}
 body{
   margin:0; background:var(--bg); color:var(--ink);
-  font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans JP",sans-serif;
+  font-family:var(--sans);
   font-size:16px; line-height:1.85; -webkit-font-smoothing:antialiased;
+  font-feature-settings:"palt" 1;
 }
-html[data-lang="en"] body{ font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif; }
 .wrap{max-width:var(--max); margin:0 auto; padding:0 24px}
 a{color:var(--accent); text-decoration:none}
 a:hover{text-decoration:underline}
@@ -53,7 +58,7 @@ nav{
 }
 nav .wrap{display:flex; align-items:center; gap:8px; height:58px; flex-wrap:nowrap; overflow-x:auto; scrollbar-width:none}
 nav .wrap::-webkit-scrollbar{display:none}
-nav .brand{font-weight:700; margin-right:auto; white-space:nowrap; letter-spacing:.02em}
+nav .brand{font-family:var(--serif); font-weight:600; margin-right:auto; white-space:nowrap; letter-spacing:.04em}
 nav a.navlink{
   color:var(--ink-2); font-size:.86rem; padding:6px 10px; border-radius:6px; white-space:nowrap;
 }
@@ -67,25 +72,32 @@ nav a.navlink:hover{background:var(--accent-soft); color:var(--accent); text-dec
 
 /* hero */
 header.hero{padding:64px 0 44px; border-bottom:1px solid var(--rule)}
-.hero-grid{display:flex; gap:36px; align-items:flex-start; flex-wrap:wrap}
-.portrait{
-  width:150px; height:150px; border-radius:50%; flex:none; object-fit:cover;
-  background:var(--accent-soft); border:1px solid var(--rule);
-  display:flex; align-items:center; justify-content:center; color:var(--ink-3); font-size:.72rem; text-align:center; line-height:1.5;
-}
 .hero h1{
-  font-size:clamp(1.9rem,4.6vw,2.7rem); margin:0 0 4px; line-height:1.25; letter-spacing:.01em;
-  font-family:Georgia,"Times New Roman","Yu Mincho",serif; font-weight:600;
+  font-size:clamp(1.9rem,4.6vw,2.7rem); margin:0 0 6px; line-height:1.25; letter-spacing:.02em;
+  font-family:var(--serif); font-weight:600;
 }
-.hero .kana{color:var(--ink-3); font-size:.9rem; letter-spacing:.08em; margin:0 0 14px}
+.hero .kana{color:var(--ink-3); font-size:.9rem; letter-spacing:.08em; margin:0 0 18px}
 .hero .role{margin:0 0 6px; color:var(--ink-2)}
 .hero .role strong{color:var(--ink)}
-.tags{display:flex; flex-wrap:wrap; gap:7px; margin:18px 0 0; padding:0; list-style:none}
+
+/* 分野とテーマを分けて表示 */
+.meta{margin-top:24px; display:grid; grid-template-columns:auto 1fr; gap:10px 18px; align-items:baseline}
+.meta dt{
+  font-size:.72rem; letter-spacing:.14em; color:var(--ink-3); white-space:nowrap;
+  padding-top:3px;
+}
+.meta dd{margin:0}
+.meta .fields{color:var(--ink); font-size:.95rem}
+@media (max-width:560px){
+  .meta{grid-template-columns:1fr; gap:4px 0}
+  .meta dt{margin-top:10px}
+}
+.tags{display:flex; flex-wrap:wrap; gap:7px; margin:0; padding:0; list-style:none}
 .tags li{
   font-size:.78rem; padding:4px 11px; border-radius:999px;
   background:var(--accent-soft); color:var(--accent); border:1px solid transparent;
 }
-.links{display:flex; flex-wrap:wrap; gap:10px; margin-top:20px}
+.links{display:flex; flex-wrap:wrap; gap:10px; margin-top:26px}
 .links a{
   font-size:.83rem; border:1px solid var(--rule); background:var(--card);
   padding:6px 14px; border-radius:8px; color:var(--ink-2);
@@ -99,7 +111,7 @@ h2{
   font-size:.82rem; letter-spacing:.18em; text-transform:uppercase; color:var(--accent);
   margin:0 0 26px; font-weight:700;
 }
-h3{font-size:1.05rem; margin:0 0 8px; font-weight:650; letter-spacing:.01em}
+h3{font-family:var(--serif); font-size:1.08rem; margin:0 0 8px; font-weight:600; letter-spacing:.02em}
 p{margin:0 0 1em; color:var(--ink-2)}
 p.lead{font-size:1.03rem; color:var(--ink)}
 
@@ -119,7 +131,7 @@ p.lead{font-size:1.03rem; color:var(--ink)}
 .pub-filter button[aria-pressed="true"]{background:var(--accent); border-color:var(--accent); color:#fff}
 .yeargroup{display:grid; grid-template-columns:64px 1fr; gap:0 20px; margin-bottom:6px}
 .yeargroup .yr{
-  font-family:Georgia,serif; font-size:1.15rem; color:var(--ink-3); padding-top:14px;
+  font-family:var(--serif); font-size:1.1rem; color:var(--ink-3); padding-top:14px;
   position:sticky; top:70px; align-self:start;
 }
 ol.pubs{list-style:none; margin:0; padding:0}
@@ -182,28 +194,31 @@ footer{padding:36px 0 60px; color:var(--ink-3); font-size:.8rem}
 </nav>
 
 <header class="hero">
-  <div class="wrap hero-grid">
-    <!-- 顔写真を使う場合：下の div を <img class="portrait" src="photo.jpg" alt=""> に置き換えてください -->
-    <div class="portrait"><span class="ja">写真<br>（任意）</span><span class="en">Photo<br>(optional)</span></div>
-    <div style="flex:1; min-width:260px">
-      <h1><span class="ja">平岡 大樹</span><span class="en">Daiki Hiraoka, Ph.D.</span></h1>
-      <p class="kana"><span class="ja">ひらおか だいき ／ Daiki Hiraoka, Ph.D.</span><span class="en">HIRAOKA Daiki</span></p>
-      <p class="role"><span class="ja"><strong>専任講師</strong>　神戸女学院大学 心理学部</span><span class="en"><strong>Lecturer</strong>, Department of Psychology, Kobe College</span></p>
-      <p class="role"><span class="ja">研究員　名古屋市立大学大学院医学研究科／Special Community Member, University of Denver</span><span class="en">Researcher, Nagoya City University Graduate School of Medical Sciences ・ Special Community Member, University of Denver</span></p>
-      <ul class="tags">
-        <li><span class="ja">養育行動</span><span class="en">Parenting behavior</span></li>
-        <li><span class="ja">養育者心理</span><span class="en">Caregiver psychology</span></li>
-        <li><span class="ja">乳児の泣き声への反応</span><span class="en">Responses to infant crying</span></li>
-        <li><span class="ja">縦断研究</span><span class="en">Longitudinal research</span></li>
-        <li><span class="ja">発達認知神経科学</span><span class="en">Developmental cognitive neuroscience</span></li>
-      </ul>
-      <div class="links">
-        <a href="https://researchmap.jp/hiraoka" target="_blank" rel="noopener">researchmap</a>
-        <a href="https://orcid.org/0000-0003-2776-5129" target="_blank" rel="noopener">ORCID</a>
-        <a href="https://scholar.google.com/citations?user=YOUR_ID" target="_blank" rel="noopener">Google Scholar</a>
-        <a href="https://pubmed.ncbi.nlm.nih.gov/?term=Hiraoka+D%5BAuthor%5D" target="_blank" rel="noopener">PubMed</a>
-        <a href="#contact"><span class="ja">連絡先</span><span class="en">Contact</span></a>
-      </div>
+  <div class="wrap">
+    <h1><span class="ja">平岡 大樹</span><span class="en">Daiki Hiraoka, Ph.D.</span></h1>
+    <p class="kana"><span class="ja">ひらおか だいき ／ Daiki Hiraoka, Ph.D.</span><span class="en">HIRAOKA Daiki</span></p>
+    <p class="role"><span class="ja"><strong>専任講師</strong>　神戸女学院大学 心理学部</span><span class="en"><strong>Lecturer</strong>, Department of Psychology, Kobe College</span></p>
+    <p class="role"><span class="ja">研究員　名古屋市立大学大学院医学研究科／Special Community Member, University of Denver</span><span class="en">Researcher, Nagoya City University Graduate School of Medical Sciences ・ Special Community Member, University of Denver</span></p>
+
+    <dl class="meta">
+      <dt><span class="ja">専門分野</span><span class="en">FIELDS</span></dt>
+      <dd class="fields"><span class="ja">発達心理学　／　認知神経科学</span><span class="en">Developmental Psychology ／ Cognitive Neuroscience</span></dd>
+      <dt><span class="ja">研究テーマ</span><span class="en">TOPICS</span></dt>
+      <dd>
+        <ul class="tags">
+          <li><span class="ja">養育行動</span><span class="en">Parenting behavior</span></li>
+          <li><span class="ja">養育者の心理</span><span class="en">Caregiver psychology</span></li>
+          <li><span class="ja">乳児の泣き声への反応</span><span class="en">Responses to infant crying</span></li>
+          <li><span class="ja">親になる過程</span><span class="en">Transition to parenthood</span></li>
+          <li><span class="ja">縦断データ解析</span><span class="en">Longitudinal data analysis</span></li>
+        </ul>
+      </dd>
+    </dl>
+
+    <div class="links">
+      <a href="https://researchmap.jp/hiraoka" target="_blank" rel="noopener">researchmap</a>
+      <a href="https://orcid.org/0000-0003-2776-5129" target="_blank" rel="noopener">ORCID</a>
+      <a href="#contact"><span class="ja">連絡先</span><span class="en">Contact</span></a>
     </div>
   </div>
 </header>
@@ -602,7 +617,7 @@ footer{padding:36px 0 60px; color:var(--ink-3); font-size:.8rem}
       </div>
       <div>
         <span class="k">LINKS</span>
-        <a href="https://researchmap.jp/hiraoka" target="_blank" rel="noopener">researchmap</a> ／
+        <a href="https://researchmap.jp/hiraoka" target="_blank" rel="noopener">researchmap</a>
         <a href="https://orcid.org/0000-0003-2776-5129" target="_blank" rel="noopener">ORCID</a>
       </div>
     </div>
