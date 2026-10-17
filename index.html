@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>平岡大樹 / Daiki Hiraoka — 発達心理学・認知神経科学</title>
-<meta name="description" content="平岡大樹（神戸女学院大学 心理学部 専任講師）の研究者ページ。養育行動，養育者心理，乳児の泣き声への反応，縦断研究。">
+<meta name="description" content="平岡大樹（神戸女学院大学 心理学部 専任講師）の研究者ページ。養育行動，養育者心理，乳児の泣き声への反応，親になる過程。">
 <meta property="og:title" content="平岡大樹 / Daiki Hiraoka">
 <meta property="og:description" content="発達心理学・認知神経科学｜養育行動・養育者心理・乳児の泣き声への反応・縦断研究">
 <meta property="og:type" content="profile">
@@ -14,36 +14,53 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=Noto+Serif+JP:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --ink:#1c1f23;
-  --ink-2:#4a5158;
-  --ink-3:#767f88;
-  --rule:#e2e5e9;
-  --bg:#fbfbf9;
-  --card:#ffffff;
-  --accent:#1f5f63;
-  --accent-soft:#e7f0f0;
-  --max:920px;
+  --bg:#fffdfa;
+  --surface:#ffffff;
+  --tint:#fbf6ef;
+  --ink:#2a2725;
+  --ink-2:#524c46;
+  --ink-3:#736c65;
+  --rule:#ece4d8;
+  --accent:#ad5029;
+  --accent-ink:#ffffff;
+  --accent-soft:#fbebe1;
+  --sage:#3a675e;
+  --sage-soft:#e5efeb;
+  --gold:#7f530f;
+  --gold-soft:#f7ecd6;
+  --shadow:0 1px 2px rgba(70,45,20,.04), 0 8px 24px rgba(70,45,20,.06);
+  --radius:16px;
+  --max:960px;
   --sans:"Noto Sans JP","Helvetica Neue",Arial,sans-serif;
   --serif:"Noto Serif JP",Georgia,"Times New Roman",serif;
 }
 @media (prefers-color-scheme: dark){
   :root{
-    --ink:#e9ecef; --ink-2:#b2bac1; --ink-3:#8a939c;
-    --rule:#2b3238; --bg:#14171a; --card:#1a1e22;
-    --accent:#7fc4c8; --accent-soft:#1e2b2c;
+    --bg:#191715; --surface:#221f1c; --tint:#1e1b18;
+    --ink:#f1ece6; --ink-2:#cbc3ba; --ink-3:#a39a90;
+    --rule:#36312b;
+    --accent:#eb9a70; --accent-ink:#1b1410; --accent-soft:#3a2519;
+    --sage:#93c5b9; --sage-soft:#1d2e2a;
+    --gold:#e6c27e; --gold-soft:#33291a;
+    --shadow:none;
   }
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth; scroll-padding-top:78px}
+html{scroll-behavior:smooth; scroll-padding-top:76px; -webkit-text-size-adjust:100%}
 body{
   margin:0; background:var(--bg); color:var(--ink);
   font-family:var(--sans);
-  font-size:16px; line-height:1.9; letter-spacing:.012em; -webkit-font-smoothing:antialiased;
+  font-size:17px; line-height:1.95; letter-spacing:.02em; -webkit-font-smoothing:antialiased;
 }
-h1,h2,h3,nav .brand,.tags li,.badge{font-feature-settings:"palt" 1}
+@media (max-width:600px){ body{font-size:16px} }
+h1,h2,h3,nav a,.tags li,.badge,.eyebrow,.who,.btn{font-feature-settings:"palt" 1}
+/* 日本語の文節単位で改行（対応ブラウザのみ） */
+h2,h3,.catch,.handoff p{word-break:auto-phrase}
 .wrap{max-width:var(--max); margin:0 auto; padding:0 24px}
+@media (max-width:600px){ .wrap{padding:0 18px} }
 a{color:var(--accent); text-decoration:none}
-a:hover{text-decoration:underline}
+a:hover{text-decoration:underline; text-underline-offset:3px}
+:focus-visible{outline:2px solid var(--accent); outline-offset:3px; border-radius:6px}
 
 /* language toggle */
 html[data-lang="ja"] .en{display:none !important}
@@ -52,127 +69,159 @@ html[data-lang="en"] .ja{display:none !important}
 /* nav */
 nav{
   position:sticky; top:0; z-index:50;
-  background:color-mix(in srgb, var(--bg) 88%, transparent);
+  background:color-mix(in srgb, var(--bg) 90%, transparent);
   backdrop-filter:saturate(180%) blur(12px);
   border-bottom:1px solid var(--rule);
 }
-nav .wrap{display:flex; align-items:center; gap:8px; height:58px; flex-wrap:nowrap; overflow-x:auto; scrollbar-width:none}
+nav .wrap{display:flex; align-items:center; gap:2px; height:60px; flex-wrap:nowrap; overflow-x:auto; scrollbar-width:none}
 nav .wrap::-webkit-scrollbar{display:none}
 nav .brand{
   margin-right:auto; white-space:nowrap;
   font-size:.82rem; letter-spacing:.12em; color:var(--ink-3);
-  padding:6px 10px; border-radius:6px; text-decoration:none;
+  padding:6px 12px; border-radius:999px;
 }
-nav .brand:hover{background:var(--accent-soft); color:var(--accent); text-decoration:none}
-nav a.navlink{
-  color:var(--ink-2); font-size:.86rem; padding:6px 10px; border-radius:6px; white-space:nowrap;
-}
-nav a.navlink:hover{background:var(--accent-soft); color:var(--accent); text-decoration:none}
+nav a.navlink{color:var(--ink-2); font-size:.88rem; padding:6px 12px; border-radius:999px; white-space:nowrap}
+nav a.navlink.hl{color:var(--accent); font-weight:600}
+nav .brand:hover, nav a.navlink:hover{background:var(--accent-soft); color:var(--accent); text-decoration:none}
 .langbtn{
-  border:1px solid var(--rule); background:var(--card); color:var(--ink-2);
+  margin-left:6px;
+  border:1px solid var(--rule); background:var(--surface); color:var(--ink-2);
   border-radius:999px; padding:5px 14px; font-size:.8rem; cursor:pointer; white-space:nowrap;
   font-family:inherit; letter-spacing:.04em;
 }
 .langbtn:hover{border-color:var(--accent); color:var(--accent)}
 
 /* hero */
-header.hero{padding:64px 0 44px; border-bottom:1px solid var(--rule)}
+header.hero{
+  padding:76px 0 60px; border-bottom:1px solid var(--rule);
+  background:
+    radial-gradient(900px 380px at 92% -12%, var(--accent-soft), transparent 62%),
+    radial-gradient(760px 340px at -8% 112%, var(--sage-soft), transparent 62%);
+}
 .hero h1{
-  font-size:clamp(1.9rem,4.6vw,2.7rem); margin:0 0 6px; line-height:1.25; letter-spacing:.02em;
   font-family:var(--serif); font-weight:600;
+  font-size:clamp(2.1rem,5vw,3rem); line-height:1.2; margin:0 0 6px; letter-spacing:.04em;
 }
 .hero .kana{color:var(--ink-3); font-size:.9rem; letter-spacing:.08em; margin:0 0 18px}
-.hero .role{margin:0 0 6px; color:var(--ink-2)}
+.hero .role{margin:0 0 2px; color:var(--ink-2); font-size:.93rem}
 .hero .role strong{color:var(--ink)}
-
-/* 分野とテーマを分けて表示 */
-.meta{margin-top:24px; display:grid; grid-template-columns:auto 1fr; gap:10px 18px; align-items:baseline}
-.meta dt{
-  font-size:.72rem; letter-spacing:.14em; color:var(--ink-3); white-space:nowrap;
-  padding-top:3px;
+.hero .catch{
+  font-size:clamp(1.1rem,2.4vw,1.3rem); line-height:1.9; color:var(--ink); font-weight:500;
+  max-width:36em; margin:30px 0 26px;
 }
+.cta{display:flex; flex-wrap:wrap; gap:12px; margin:0 0 36px}
+.btn{
+  display:inline-flex; align-items:center; gap:8px;
+  padding:11px 24px; border-radius:999px; font-weight:600; font-size:.95rem;
+  border:1.5px solid var(--accent); transition:transform .15s ease, box-shadow .15s ease;
+}
+.btn:hover{text-decoration:none; transform:translateY(-1px); box-shadow:var(--shadow)}
+.btn.primary{background:var(--accent); color:var(--accent-ink)}
+.btn.secondary{background:var(--surface); color:var(--accent)}
+
+.meta{display:grid; grid-template-columns:auto 1fr; gap:10px 18px; align-items:baseline; margin:0}
+.meta dt{font-size:.75rem; letter-spacing:.12em; color:var(--ink-3); white-space:nowrap; padding-top:3px}
 .meta dd{margin:0}
 .meta .fields{color:var(--ink); font-size:.95rem}
 @media (max-width:560px){
   .meta{grid-template-columns:1fr; gap:4px 0}
   .meta dt{margin-top:10px}
 }
-.tags{display:flex; flex-wrap:wrap; gap:7px; margin:0; padding:0; list-style:none}
+.tags{display:flex; flex-wrap:wrap; gap:8px; margin:0; padding:0; list-style:none}
 .tags li{
-  font-size:.78rem; padding:4px 11px; border-radius:999px;
-  background:var(--accent-soft); color:var(--accent); border:1px solid transparent;
+  font-size:.82rem; padding:4px 13px; border-radius:999px; line-height:1.8;
+  background:var(--accent-soft); color:var(--accent);
 }
-.links{display:flex; flex-wrap:wrap; gap:10px; margin-top:26px}
-.links a{
-  font-size:.83rem; border:1px solid var(--rule); background:var(--card);
-  padding:6px 14px; border-radius:8px; color:var(--ink-2);
-}
-.links a:hover{border-color:var(--accent); color:var(--accent); text-decoration:none}
+.tags.sage li{background:var(--sage-soft); color:var(--sage)}
+.links{display:flex; flex-wrap:wrap; gap:18px; margin-top:22px; font-size:.85rem}
+.links a{color:var(--ink-2); border-bottom:1px solid var(--rule)}
+.links a:hover{color:var(--accent); border-color:var(--accent); text-decoration:none}
 
 /* sections */
-section{padding:52px 0; border-bottom:1px solid var(--rule)}
-section:last-of-type{border-bottom:none}
-h2{
-  font-size:.82rem; letter-spacing:.18em; text-transform:uppercase; color:var(--accent);
-  margin:0 0 26px; font-weight:700;
-}
-h3{font-family:var(--serif); font-size:1.08rem; margin:0 0 8px; font-weight:600; letter-spacing:.02em}
+section{padding:76px 0}
+section + section, .handoff + section{border-top:1px solid var(--rule)}
+section.tinted{background:var(--tint)}
+.eyebrow{font-size:.74rem; letter-spacing:.18em; text-transform:uppercase; color:var(--accent); font-weight:700; margin:0 0 4px}
+h2{font-size:clamp(1.45rem,3vw,1.8rem); line-height:1.45; margin:0 0 24px; font-weight:700; letter-spacing:.03em}
+h3{font-size:1.1rem; line-height:1.6; margin:0 0 8px; font-weight:700; letter-spacing:.02em}
 p{margin:0 0 1em; color:var(--ink-2)}
-p.lead{font-size:1.03rem; color:var(--ink)}
-p.soft{font-size:.88rem; color:var(--ink-3); margin-top:-.2em}
+p.lead{font-size:1.05rem; color:var(--ink)}
+p.soft{font-size:.9rem; color:var(--ink-3); margin-top:-.2em}
+.note{font-size:.85rem; color:var(--ink-3)}
 
+/* Q&A cards */
+.qgrid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:34px}
+@media (max-width:880px){ .qgrid{grid-template-columns:1fr} }
+.qcard{
+  background:var(--surface); border:1px solid var(--rule); border-radius:var(--radius);
+  padding:26px 24px 22px; box-shadow:var(--shadow); display:flex; flex-direction:column;
+}
+.qcard .icon{
+  width:46px; height:46px; border-radius:14px; display:grid; place-items:center;
+  background:var(--accent-soft); color:var(--accent); margin-bottom:16px;
+}
+.qcard .qlabel{font-size:.74rem; letter-spacing:.16em; color:var(--accent); font-weight:700; margin:0 0 2px}
+.qcard h3{font-size:1.06rem; line-height:1.65; margin:0 0 12px; color:var(--ink)}
+.qcard p{font-size:.94rem; line-height:1.9; margin:0 0 16px}
+.qcard .src{margin-top:auto; padding-top:12px; border-top:1px dashed var(--rule); font-size:.78rem; color:var(--ink-3); line-height:1.7}
+
+/* students */
+.sgrid{display:grid; grid-template-columns:1fr 1fr; gap:20px}
+@media (max-width:780px){ .sgrid{grid-template-columns:1fr} }
+.scard{background:var(--surface); border:1px solid var(--rule); border-radius:var(--radius); padding:30px 28px; box-shadow:var(--shadow)}
+.who{display:inline-block; font-size:.78rem; font-weight:700; padding:3px 13px; border-radius:999px; background:var(--sage-soft); color:var(--sage); margin-bottom:14px}
+.who.warm{background:var(--accent-soft); color:var(--accent)}
+.scard h3{font-size:1.12rem; margin:0 0 14px}
+.scard p{font-size:.95rem}
+.sub-h{font-size:.82rem; font-weight:700; color:var(--ink); letter-spacing:.06em; margin:22px 0 10px}
+.scard .tags{margin-bottom:4px}
+
+/* hand-off band */
+.handoff{background:var(--tint); border-top:1px solid var(--rule); padding:26px 0; text-align:center}
+.handoff p{margin:0; font-size:.9rem; color:var(--ink-3)}
+
+/* research themes */
 .themes{margin-top:36px}
-.theme{
-  display:grid; grid-template-columns:34px 1fr; gap:0 18px;
-  padding:20px 0; border-top:1px solid var(--rule);
-}
-.theme .num{
-  font-family:var(--serif); font-size:.9rem; color:var(--ink-3);
-  grid-row:span 2; padding-top:2px;
-}
+.theme{display:grid; grid-template-columns:34px 1fr; gap:0 18px; padding:20px 0; border-top:1px solid var(--rule)}
+.theme .num{font-family:var(--serif); font-size:.9rem; color:var(--ink-3); grid-row:span 2; padding-top:2px}
 .theme h3{margin:0 0 4px}
-.theme p{font-size:.92rem; margin:0; color:var(--ink-2)}
+.theme p{font-size:.93rem; margin:0}
 
 /* publications */
 .pub-filter{display:flex; gap:8px; flex-wrap:wrap; margin-bottom:24px}
 .pub-filter button{
-  font-family:inherit; font-size:.8rem; padding:5px 13px; border-radius:999px; cursor:pointer;
-  border:1px solid var(--rule); background:var(--card); color:var(--ink-2);
+  font-family:inherit; font-size:.82rem; padding:6px 15px; border-radius:999px; cursor:pointer;
+  border:1px solid var(--rule); background:var(--surface); color:var(--ink-2);
 }
-.pub-filter button[aria-pressed="true"]{background:var(--accent); border-color:var(--accent); color:#fff}
+.pub-filter button[aria-pressed="true"]{background:var(--accent); border-color:var(--accent); color:var(--accent-ink)}
 .yeargroup{display:grid; grid-template-columns:64px 1fr; gap:0 20px; margin-bottom:6px}
 .yeargroup .yr{
   font-family:var(--serif); font-size:1.1rem; color:var(--ink-3); padding-top:14px;
-  position:sticky; top:70px; align-self:start;
+  position:sticky; top:72px; align-self:start;
 }
 ol.pubs{list-style:none; margin:0; padding:0}
-ol.pubs li{
-  padding:14px 0; border-top:1px solid var(--rule); font-size:.9rem; line-height:1.7;
-}
+ol.pubs li{padding:15px 0; border-top:1px solid var(--rule); font-size:.92rem; line-height:1.75}
 .yeargroup ol.pubs li:first-child{border-top:none}
 ol.pubs .t{color:var(--ink); font-weight:600; display:block; margin-bottom:3px}
-ol.pubs .a{color:var(--ink-3); font-size:.84rem; display:block}
+ol.pubs .a{color:var(--ink-3); font-size:.85rem; display:block}
 ol.pubs .j{color:var(--ink-2); font-style:italic}
-ol.pubs .doi{font-size:.79rem; margin-left:6px; white-space:nowrap}
+ol.pubs .doi{font-size:.8rem; margin-left:6px; white-space:nowrap}
 .badge{
-  display:inline-block; font-size:.68rem; letter-spacing:.06em; padding:1px 7px; border-radius:4px;
-  background:var(--accent-soft); color:var(--accent); margin-right:6px; vertical-align:1px;
+  display:inline-block; font-size:.7rem; letter-spacing:.06em; padding:1px 8px; border-radius:6px;
+  background:var(--sage-soft); color:var(--sage); margin-right:6px; vertical-align:1px; font-weight:600;
 }
-.badge.first{background:#f3ecd9; color:#8a6d1f}
-@media (prefers-color-scheme: dark){ .badge.first{background:#332c17; color:#d8be7c} }
+.badge.first{background:var(--gold-soft); color:var(--gold)}
 
 /* simple lists */
-.tags.courses{margin-top:14px}
-.tags.courses li{font-size:.86rem; padding:5px 14px}
 ul.plain{list-style:none; margin:0; padding:0}
 ul.plain li{
-  padding:13px 0; border-top:1px solid var(--rule);
-  display:grid; grid-template-columns:130px 1fr; gap:4px 20px; font-size:.9rem;
+  padding:14px 0; border-top:1px solid var(--rule);
+  display:grid; grid-template-columns:140px 1fr; gap:4px 20px; font-size:.92rem;
 }
 ul.plain li:first-child{border-top:none}
-ul.plain .when{color:var(--ink-3); font-size:.83rem; font-variant-numeric:tabular-nums}
+ul.plain .when{color:var(--ink-3); font-size:.85rem; font-variant-numeric:tabular-nums}
 ul.plain .what{color:var(--ink)}
-ul.plain .sub{color:var(--ink-3); font-size:.83rem; display:block; margin-top:2px}
+ul.plain .sub{color:var(--ink-3); font-size:.85rem; display:block; margin-top:2px}
 @media (max-width:600px){
   ul.plain li{grid-template-columns:1fr}
   .yeargroup{grid-template-columns:1fr; gap:0}
@@ -181,13 +230,12 @@ ul.plain .sub{color:var(--ink-3); font-size:.83rem; display:block; margin-top:2p
 
 /* contact */
 .contact-box{
-  background:var(--card); border:1px solid var(--rule); border-radius:12px; padding:26px;
-  display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:22px;
+  background:var(--surface); border:1px solid var(--rule); border-radius:var(--radius); padding:28px;
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:22px; box-shadow:var(--shadow);
 }
-.contact-box .k{font-size:.74rem; letter-spacing:.12em; color:var(--ink-3); display:block; margin-bottom:4px}
+.contact-box .k{font-size:.75rem; letter-spacing:.12em; color:var(--ink-3); display:block; margin-bottom:4px}
 .contact-box a+a{margin-left:16px}
-footer{padding:36px 0 60px; color:var(--ink-3); font-size:.8rem}
-.note{font-size:.83rem; color:var(--ink-3)}
+footer{padding:36px 0 60px; color:var(--ink-3); font-size:.82rem; border-top:1px solid var(--rule)}
 </style>
 </head>
 <body>
@@ -195,10 +243,10 @@ footer{padding:36px 0 60px; color:var(--ink-3); font-size:.8rem}
 <nav>
   <div class="wrap">
     <a class="brand" href="#top">Top</a>
-    <a class="navlink" href="#research"><span class="ja">研究</span><span class="en">Research</span></a>
-    <a class="navlink" href="#publications"><span class="ja">論文</span><span class="en">Publications</span></a>
-    <a class="navlink" href="#activity"><span class="ja">発表・受賞・助成</span><span class="en">Talks / Awards / Grants</span></a>
-    <a class="navlink" href="#teaching"><span class="ja">教育</span><span class="en">Teaching</span></a>
+    <a class="navlink hl" href="#intro"><span class="ja">研究紹介</span><span class="en">My research</span></a>
+    <a class="navlink hl" href="#students"><span class="ja">学生の方へ</span><span class="en">For students</span></a>
+    <a class="navlink" href="#research"><span class="ja">研究の詳細</span><span class="en">Details</span></a>
+    <a class="navlink" href="#publications"><span class="ja">業績</span><span class="en">Publications</span></a>
     <a class="navlink" href="#cv"><span class="ja">略歴</span><span class="en">CV</span></a>
     <a class="navlink" href="#contact"><span class="ja">連絡先</span><span class="en">Contact</span></a>
     <button class="langbtn" id="langToggle" type="button">
@@ -213,6 +261,16 @@ footer{padding:36px 0 60px; color:var(--ink-3); font-size:.8rem}
     <p class="kana"><span class="ja">ひらおか だいき ／ Daiki Hiraoka, Ph.D.</span><span class="en">HIRAOKA Daiki</span></p>
     <p class="role"><span class="ja"><strong>専任講師</strong>　神戸女学院大学 心理学部</span><span class="en"><strong>Lecturer</strong>, Department of Psychology, Kobe College</span></p>
     <p class="role"><span class="ja">研究員　名古屋市立大学大学院医学研究科／Special Community Member, University of Denver</span><span class="en">Researcher, Nagoya City University Graduate School of Medical Sciences ・ Special Community Member, University of Denver</span></p>
+
+    <p class="catch">
+      <span class="ja">赤ちゃんが泣いたとき，親の心と脳では何が起きているのでしょうか。そんな問いを，心理学の方法で研究しています。</span>
+      <span class="en">What happens in a parent's mind and brain when a baby cries? That is the question I study, using the methods of psychology.</span>
+    </p>
+
+    <div class="cta">
+      <a class="btn primary" href="#intro"><span class="ja">研究紹介を読む</span><span class="en">Read about my research</span> <span aria-hidden="true">→</span></a>
+      <a class="btn secondary" href="#students"><span class="ja">学生のみなさんへ</span><span class="en">For students</span></a>
+    </div>
 
     <dl class="meta">
       <dt><span class="ja">専門分野</span><span class="en">FIELDS</span></dt>
@@ -231,16 +289,99 @@ footer{padding:36px 0 60px; color:var(--ink-3); font-size:.8rem}
     <div class="links">
       <a href="https://researchmap.jp/hiraoka" target="_blank" rel="noopener">researchmap</a>
       <a href="https://orcid.org/0000-0003-2776-5129" target="_blank" rel="noopener">ORCID</a>
-      <a href="#contact"><span class="ja">連絡先</span><span class="en">Contact</span></a>
     </div>
   </div>
 </header>
 
 <main>
 
+<section id="intro" class="tinted">
+  <div class="wrap">
+    <p class="eyebrow">Research in plain words</p>
+    <h2><span class="ja">どんな研究をしているの？</span><span class="en">What do I study?</span></h2>
+    <p class="lead">
+      <span class="ja">赤ちゃんの泣き声は，「助けて」を伝える大切なサインです。一方で，聞く人をあせらせたり，イライラさせたりすることもあります。同じ親でも，そのときの状況や，親になってからの時間によって，泣き声への反応は変わります。その変化がどうして起きるのかを調べています。</span>
+      <span class="en">A baby's cry is an important signal that says "help me." At the same time, it can make listeners anxious or irritated. Even for the same parent, responses to crying change with the situation and with time spent as a parent. I study why those changes happen.</span>
+    </p>
+
+    <div class="qgrid">
+      <article class="qcard">
+        <div class="icon" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 12h2M7 8v8M11 5v14M15 9v6M19 11v2M21 12h0"/></svg>
+        </div>
+        <p class="qlabel">Q1</p>
+        <h3><span class="ja">忙しいときほど，泣き声にやさしく応じにくくなる？</span><span class="en">Is it harder to respond kindly to crying when your mind is busy?</span></h3>
+        <p><span class="ja">頭の中でほかのことを覚えておかなければならない状態で，赤ちゃんの泣き声を聞いてもらう実験をしました。すると，「世話をしてあげたい」という気持ちが弱まることがわかりました。子育てのしんどさは，その人の性格だけでなく，そのときの状況にも左右されます。</span><span class="en">In an experiment, people listened to infant crying while holding other information in mind. Under this mental load, their intention to provide care became weaker. How hard caregiving feels depends not only on who we are, but also on the situation we are in.</span></p>
+        <p class="src"><span class="ja">もとになった論文：</span><span class="en">Based on: </span>Hiraoka &amp; Nomura (2016) <a href="https://doi.org/10.1038/srep28247" target="_blank" rel="noopener"><i>Scientific Reports</i></a></p>
+      </article>
+
+      <article class="qcard">
+        <div class="icon" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        </div>
+        <p class="qlabel">Q2</p>
+        <h3><span class="ja">親になると，泣き声の聞こえ方は変わる？</span><span class="en">Does becoming a parent change how crying sounds?</span></h3>
+        <p><span class="ja">はじめて母親になった人に，産後2〜3か月ごろと，その約半年後の2回，同じ課題に取り組んでもらいました。すると，経験を重ねるにつれて，泣き声に気をとられにくくなる様子が見られました。同じ人を時間をかけて追いかける「縦断研究」だからこそわかることです。</span><span class="en">First-time mothers completed the same task twice: about two to three months after giving birth, and again roughly six months later. With more experience, they appeared less distracted by infant crying. This kind of change only becomes visible in longitudinal research, which follows the same people over time.</span></p>
+        <p class="src"><span class="ja">もとになった論文：</span><span class="en">Based on: </span>Hiraoka et al. (2023) <a href="https://doi.org/10.3389/fnbeh.2023.1192275" target="_blank" rel="noopener"><i>Frontiers in Behavioral Neuroscience</i></a></p>
+      </article>
+
+      <article class="qcard">
+        <div class="icon" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg>
+        </div>
+        <p class="qlabel">Q3</p>
+        <h3><span class="ja">赤ちゃんへの気持ちと，産後の落ち込みはつながっている？</span><span class="en">Are feelings toward the baby linked to postpartum low mood?</span></h3>
+        <p><span class="ja">妊娠中から産後1年半まで，同じお母さんたちに何度もアンケートに答えてもらいました。すると，赤ちゃんへのイライラや拒否感がふだんより強まると，その後に気分の落ち込みが強まりやすいことがわかりました。赤ちゃんとの絆を支えることが，産後うつの予防につながるかもしれません。</span><span class="en">We surveyed the same mothers repeatedly from pregnancy to 18 months after birth. When their feelings of anger or rejection toward their baby rose above their usual level, their depressive symptoms tended to increase afterwards. Supporting the parent–infant bond may help prevent postpartum depression.</span></p>
+        <p class="src"><span class="ja">もとになった論文：</span><span class="en">Based on: </span>Hiraoka et al. (2024) <a href="https://doi.org/10.1017/S0033291723003707" target="_blank" rel="noopener"><i>Psychological Medicine</i></a></p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="students">
+  <div class="wrap">
+    <p class="eyebrow">For students</p>
+    <h2><span class="ja">学生のみなさんへ</span><span class="en">For students</span></h2>
+
+    <div class="sgrid">
+      <div class="scard">
+        <span class="who"><span class="ja">高校生・受験生の方へ</span><span class="en">For high school students</span></span>
+        <h3><span class="ja">心理学は，心を「データ」で確かめる学問です</span><span class="en">Psychology tests ideas about the mind with data</span></h3>
+        <p><span class="ja">「心理学」と聞くと，人の心を読みとる技術を思い浮かべる人もいるかもしれません。実際の心理学は，ふだん感じる「なぜだろう」を，実験やアンケートで確かめていく学問です。</span><span class="en">Some people imagine psychology as a way of reading minds. In practice, psychology takes the everyday questions we wonder about and tests them with experiments and surveys.</span></p>
+        <p><span class="ja">なかでも発達心理学は，赤ちゃんから大人まで，人が一生をとおしてどう変わっていくのかを扱います。「親になる」という大人の変化も，その大切なテーマのひとつです。</span><span class="en">Developmental psychology looks at how people change across the whole lifespan, from infancy to adulthood. Becoming a parent is one important example of change in adulthood.</span></p>
+      </div>
+
+      <div class="scard">
+        <span class="who warm"><span class="ja">学部生の方へ</span><span class="en">For undergraduates</span></span>
+        <h3><span class="ja">こんなことに関心のある人を歓迎します</span><span class="en">You may enjoy my seminars if you are interested in…</span></h3>
+        <ul class="tags sage">
+          <li><span class="ja">赤ちゃん・子どもの発達</span><span class="en">Infant and child development</span></li>
+          <li><span class="ja">親子関係・子育て</span><span class="en">Parent–child relationships</span></li>
+          <li><span class="ja">感情とストレス</span><span class="en">Emotion and stress</span></li>
+          <li><span class="ja">データを使った分析</span><span class="en">Working with data</span></li>
+        </ul>
+        <p class="sub-h"><span class="ja">担当科目</span><span class="en">Current courses</span></p>
+        <ul class="tags">
+          <li><span class="ja">心理学入門ゼミ</span><span class="en">Introductory Seminar in Psychology</span></li>
+          <li><span class="ja">発達心理学ゼミ</span><span class="en">Seminar in Developmental Psychology</span></li>
+          <li><span class="ja">IT基礎・応用演習</span><span class="en">Information Technology: Basic &amp; Applied Practicum</span></li>
+        </ul>
+        <p style="margin-top:18px"><span class="ja">授業では，発達変化を見る視点と，データを分析し読み解く技術の両方を身につけてもらうことを重視しています。ゼミや卒業研究について聞きたいことがあれば，気軽に<a href="#contact">メール</a>で連絡してください。</span><span class="en">In class, I want students to gain both a perspective for observing developmental change and the skills to analyze and interpret data. If you have questions about my seminars or graduation research, feel free to <a href="#contact">email me</a>.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="handoff">
+  <div class="wrap">
+    <p><span class="ja">ここから先は，研究者・関係者の方に向けた詳しい情報です。</span><span class="en">The sections below contain detailed information for researchers and colleagues.</span></p>
+  </div>
+</div>
+
 <section id="research">
   <div class="wrap">
-    <h2>About &amp; Research</h2>
+    <p class="eyebrow">About &amp; Research</p>
+    <h2><span class="ja">研究の詳細</span><span class="en">Research in detail</span></h2>
     <p class="lead">
       <span class="ja">
         乳児の泣き声は，養育者にとって切実で，時には負担ともなる刺激です。
@@ -306,7 +447,8 @@ footer{padding:36px 0 60px; color:var(--ink-3); font-size:.8rem}
 
 <section id="publications">
   <div class="wrap">
-    <h2>Publications</h2>
+    <p class="eyebrow">Publications</p>
+    <h2><span class="ja">論文</span><span class="en">Publications</span></h2>
     <p class="note">
       <span class="ja">査読付き原著論文を中心に掲載しています。<span class="badge first">筆頭</span> は筆頭著者論文。最新の一覧は <a href="https://researchmap.jp/hiraoka" target="_blank" rel="noopener">researchmap</a> をご覧ください。</span>
       <span class="en">Peer-reviewed articles. <span class="badge first">1st</span> indicates first-authored work. See <a href="https://researchmap.jp/hiraoka" target="_blank" rel="noopener">researchmap</a> for the complete list.</span>
@@ -516,7 +658,8 @@ footer{padding:36px 0 60px; color:var(--ink-3); font-size:.8rem}
 
 <section id="activity">
   <div class="wrap">
-    <h2>Talks, Awards &amp; Grants</h2>
+    <p class="eyebrow">Talks, Awards &amp; Grants</p>
+    <h2><span class="ja">発表・受賞・研究費</span><span class="en">Talks, awards &amp; grants</span></h2>
 
     <h3 style="margin-top:8px"><span class="ja">招待講演・学会発表（抜粋）</span><span class="en">Selected Talks</span></h3>
     <ul class="plain" style="margin-bottom:40px">
@@ -555,35 +698,10 @@ footer{padding:36px 0 60px; color:var(--ink-3); font-size:.8rem}
   </div>
 </section>
 
-<section id="teaching">
-  <div class="wrap">
-    <h2>Teaching</h2>
-    <p>
-      <span class="ja">神戸女学院大学 心理学部にて，発達心理学や認知科学，ITに関する授業を担当しています。発達変化を見る視点と，データを分析し読み解く技術の両方を身につけてもらうことを重視しています。</span>
-      <span class="en">At Kobe College I teach courses in developmental psychology, cognitive science, and information technology. My aim is for students to acquire both a perspective for observing developmental change and the practical skills to analyze and interpret data.</span>
-    </p>
-
-    <h3 style="margin-top:32px"><span class="ja">担当科目</span><span class="en">Current Courses</span></h3>
-    <ul class="tags courses">
-      <li><span class="ja">心理学入門ゼミ</span><span class="en">Introductory Seminar in Psychology</span></li>
-      <li><span class="ja">発達心理学ゼミ</span><span class="en">Seminar in Developmental Psychology</span></li>
-      <li><span class="ja">IT基礎・応用演習</span><span class="en">Information Technology: Basic &amp; Applied Practicum</span></li>
-    </ul>
-
-    <h3 style="margin-top:36px"><span class="ja">他大学での担当経験</span><span class="en">Previously Taught</span></h3>
-    <ul class="plain">
-      <li><span class="when"><span class="ja">名古屋市立大学</span><span class="en">Nagoya City Univ.</span></span><span class="what"><span class="ja">行動科学／予防医学基礎／社会と医学／基礎医学概論（英語講義）</span><span class="en">Behavioral Science ・ Fundamentals of Preventive Medicine ・ Society and Medicine ・ Introduction to Basic Medical Science (in English)</span></span></li>
-      <li><span class="when"><span class="ja">名古屋大学</span><span class="en">Nagoya Univ.</span></span><span class="what"><span class="ja">心理学</span><span class="en">Psychology</span></span></li>
-      <li><span class="when"><span class="ja">人間環境大学</span><span class="en">Univ. of Human Environments</span></span><span class="what"><span class="ja">母子の健康科学特論</span><span class="en">Advanced Maternal and Child Health Science</span></span></li>
-      <li><span class="when"><span class="ja">福井大学</span><span class="en">Univ. of Fukui</span></span><span class="what"><span class="ja">生命複合科学特論</span><span class="en">Advanced Integrated Life Sciences</span></span></li>
-      <li><span class="when"><span class="ja">京都大学</span><span class="en">Kyoto Univ.</span></span><span class="what"><span class="ja">教育心理学実習</span><span class="en">Practicum in Educational Psychology</span></span></li>
-    </ul>
-  </div>
-</section>
-
 <section id="cv">
   <div class="wrap">
-    <h2>Curriculum Vitae</h2>
+    <p class="eyebrow">Curriculum Vitae</p>
+    <h2><span class="ja">略歴</span><span class="en">Curriculum vitae</span></h2>
 
     <h3 style="margin-top:8px"><span class="ja">職歴</span><span class="en">Appointments</span></h3>
     <ul class="plain" style="margin-bottom:40px">
@@ -597,6 +715,15 @@ footer{padding:36px 0 60px; color:var(--ink-3); font-size:.8rem}
       <li><span class="when">2018.04–2020.03</span><span class="what"><span class="ja">日本学術振興会　特別研究員（DC2）</span><span class="en">JSPS Research Fellow (DC2)</span></span></li>
     </ul>
 
+    <h3><span class="ja">教育歴（他大学）</span><span class="en">Teaching at other universities</span></h3>
+    <ul class="plain" style="margin-bottom:40px">
+      <li><span class="when"><span class="ja">名古屋市立大学</span><span class="en">Nagoya City Univ.</span></span><span class="what"><span class="ja">行動科学／予防医学基礎／社会と医学／基礎医学概論（英語講義）</span><span class="en">Behavioral Science ・ Fundamentals of Preventive Medicine ・ Society and Medicine ・ Introduction to Basic Medical Science (in English)</span></span></li>
+      <li><span class="when"><span class="ja">名古屋大学</span><span class="en">Nagoya Univ.</span></span><span class="what"><span class="ja">心理学</span><span class="en">Psychology</span></span></li>
+      <li><span class="when"><span class="ja">人間環境大学</span><span class="en">Univ. of Human Environments</span></span><span class="what"><span class="ja">母子の健康科学特論</span><span class="en">Advanced Maternal and Child Health Science</span></span></li>
+      <li><span class="when"><span class="ja">福井大学</span><span class="en">Univ. of Fukui</span></span><span class="what"><span class="ja">生命複合科学特論</span><span class="en">Advanced Integrated Life Sciences</span></span></li>
+      <li><span class="when"><span class="ja">京都大学</span><span class="en">Kyoto Univ.</span></span><span class="what"><span class="ja">教育心理学実習</span><span class="en">Practicum in Educational Psychology</span></span></li>
+    </ul>
+
     <h3><span class="ja">所属学会・その他</span><span class="en">Affiliations &amp; Other</span></h3>
     <ul class="plain">
       <li><span class="when"><span class="ja">所属学会</span><span class="en">Societies</span></span><span class="what"><span class="ja">日本心理学会／日本発達心理学会／日本赤ちゃん学会／日本社会心理学会</span><span class="en">Japanese Psychological Association ・ Japan Society of Developmental Psychology ・ Japanese Society of Baby Science ・ Japanese Society of Social Psychology</span></span></li>
@@ -608,7 +735,8 @@ footer{padding:36px 0 60px; color:var(--ink-3); font-size:.8rem}
 
 <section id="contact">
   <div class="wrap">
-    <h2>Contact</h2>
+    <p class="eyebrow">Contact</p>
+    <h2><span class="ja">連絡先</span><span class="en">Contact</span></h2>
     <div class="contact-box">
       <div>
         <span class="k">EMAIL</span>
