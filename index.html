@@ -55,7 +55,7 @@ body{
 @media (max-width:600px){ body{font-size:16px} }
 h1,h2,h3,nav a,.tags li,.badge,.eyebrow,.who,.btn{font-feature-settings:"palt" 1}
 /* 日本語の文節単位で改行（対応ブラウザのみ） */
-h2,h3,.catch,.handoff p{word-break:auto-phrase}
+h2,h3,.catch{word-break:auto-phrase}
 .wrap{max-width:var(--max); margin:0 auto; padding:0 24px}
 @media (max-width:600px){ .wrap{padding:0 18px} }
 a{color:var(--accent); text-decoration:none}
@@ -139,7 +139,7 @@ header.hero{
 
 /* sections */
 section{padding:76px 0}
-section + section, .handoff + section{border-top:1px solid var(--rule)}
+section + section{border-top:1px solid var(--rule)}
 section.tinted{background:var(--tint)}
 .eyebrow{font-size:.74rem; letter-spacing:.18em; text-transform:uppercase; color:var(--accent); font-weight:700; margin:0 0 4px}
 h2{font-size:clamp(1.45rem,3vw,1.8rem); line-height:1.45; margin:0 0 24px; font-weight:700; letter-spacing:.03em}
@@ -176,9 +176,6 @@ p.soft{font-size:.9rem; color:var(--ink-3); margin-top:-.2em}
 .sub-h{font-size:.82rem; font-weight:700; color:var(--ink); letter-spacing:.06em; margin:22px 0 10px}
 .scard .tags{margin-bottom:4px}
 
-/* hand-off band */
-.handoff{background:var(--tint); border-top:1px solid var(--rule); padding:26px 0; text-align:center}
-.handoff p{margin:0; font-size:.9rem; color:var(--ink-3)}
 
 /* research themes */
 .themes{margin-top:36px}
@@ -263,8 +260,8 @@ footer{padding:36px 0 60px; color:var(--ink-3); font-size:.82rem; border-top:1px
     <p class="role"><span class="ja">研究員　名古屋市立大学大学院医学研究科／Special Community Member, University of Denver</span><span class="en">Researcher, Nagoya City University Graduate School of Medical Sciences ・ Special Community Member, University of Denver</span></p>
 
     <p class="catch">
-      <span class="ja">赤ちゃんが泣いたとき，親の心と脳では何が起きているのでしょうか。そんな問いを，心理学の方法で研究しています。</span>
-      <span class="en">What happens in a parent's mind and brain when a baby cries? That is the question I study, using the methods of psychology.</span>
+      <span class="ja">親になることに伴って，人の心理や脳がどのように変わっていくのかを研究しています。とくに，乳児の泣き声に養育者がどう反応するのかに注目しています。</span>
+      <span class="en">I study how people's psychology and brains change as they become parents, with a particular focus on how caregivers respond to infant crying.</span>
     </p>
 
     <div class="cta">
@@ -297,11 +294,11 @@ footer{padding:36px 0 60px; color:var(--ink-3); font-size:.82rem; border-top:1px
 
 <section id="intro" class="tinted">
   <div class="wrap">
-    <p class="eyebrow">Research in plain words</p>
-    <h2><span class="ja">どんな研究をしているの？</span><span class="en">What do I study?</span></h2>
+    <p class="eyebrow">Research</p>
+    <h2><span class="ja">研究紹介</span><span class="en">About my research</span></h2>
     <p class="lead">
-      <span class="ja">赤ちゃんの泣き声は，「助けて」を伝える大切なサインです。一方で，聞く人をあせらせたり，イライラさせたりすることもあります。同じ親でも，そのときの状況や，親になってからの時間によって，泣き声への反応は変わります。その変化がどうして起きるのかを調べています。</span>
-      <span class="en">A baby's cry is an important signal that says "help me." At the same time, it can make listeners anxious or irritated. Even for the same parent, responses to crying change with the situation and with time spent as a parent. I study why those changes happen.</span>
+      <span class="ja">親になると，生活だけでなく，ものの感じ方や考え方も少しずつ変わっていきます。そうした変化がいつ，どのように，なぜ起きるのかを，心理学と脳科学の方法で調べています。ここでは，これまでの研究から3つを紹介します。</span>
+      <span class="en">Becoming a parent changes not only daily life but also how people perceive and think. I use methods from psychology and neuroscience to study when, how, and why these changes happen. Below are three examples from my research.</span>
     </p>
 
     <div class="qgrid">
@@ -309,9 +306,8 @@ footer{padding:36px 0 60px; color:var(--ink-3); font-size:.82rem; border-top:1px
         <div class="icon" aria-hidden="true">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 12h2M7 8v8M11 5v14M15 9v6M19 11v2M21 12h0"/></svg>
         </div>
-        <p class="qlabel">Q1</p>
-        <h3><span class="ja">忙しいときほど，泣き声にやさしく応じにくくなる？</span><span class="en">Is it harder to respond kindly to crying when your mind is busy?</span></h3>
-        <p><span class="ja">頭の中でほかのことを覚えておかなければならない状態で，赤ちゃんの泣き声を聞いてもらう実験をしました。すると，「世話をしてあげたい」という気持ちが弱まることがわかりました。子育てのしんどさは，その人の性格だけでなく，そのときの状況にも左右されます。</span><span class="en">In an experiment, people listened to infant crying while holding other information in mind. Under this mental load, their intention to provide care became weaker. How hard caregiving feels depends not only on who we are, but also on the situation we are in.</span></p>
+        <h3><span class="ja">状況によって変わる，泣き声への反応</span><span class="en">How the situation shapes responses to crying</span></h3>
+        <p><span class="ja">頭の中でほかのことを覚えておかなければならない状態で，赤ちゃんの泣き声を聞いてもらう実験をしました。すると，「世話をしてあげたい」という気持ちが弱まることがわかりました。子育ての大変さは，その人の性格だけでなく，そのときの状況にも左右されます。</span><span class="en">In an experiment, people listened to infant crying while holding other information in mind. Under this mental load, their intention to provide care became weaker. How hard caregiving feels depends not only on who we are, but also on the situation we are in.</span></p>
         <p class="src"><span class="ja">もとになった論文：</span><span class="en">Based on: </span>Hiraoka &amp; Nomura (2016) <a href="https://doi.org/10.1038/srep28247" target="_blank" rel="noopener"><i>Scientific Reports</i></a></p>
       </article>
 
@@ -319,8 +315,7 @@ footer{padding:36px 0 60px; color:var(--ink-3); font-size:.82rem; border-top:1px
         <div class="icon" aria-hidden="true">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
         </div>
-        <p class="qlabel">Q2</p>
-        <h3><span class="ja">親になると，泣き声の聞こえ方は変わる？</span><span class="en">Does becoming a parent change how crying sounds?</span></h3>
+        <h3><span class="ja">親になる過程での変化</span><span class="en">Change across the transition to parenthood</span></h3>
         <p><span class="ja">はじめて母親になった人に，産後2〜3か月ごろと，その約半年後の2回，同じ課題に取り組んでもらいました。すると，経験を重ねるにつれて，泣き声に気をとられにくくなる様子が見られました。同じ人を時間をかけて追いかける「縦断研究」だからこそわかることです。</span><span class="en">First-time mothers completed the same task twice: about two to three months after giving birth, and again roughly six months later. With more experience, they appeared less distracted by infant crying. This kind of change only becomes visible in longitudinal research, which follows the same people over time.</span></p>
         <p class="src"><span class="ja">もとになった論文：</span><span class="en">Based on: </span>Hiraoka et al. (2023) <a href="https://doi.org/10.3389/fnbeh.2023.1192275" target="_blank" rel="noopener"><i>Frontiers in Behavioral Neuroscience</i></a></p>
       </article>
@@ -329,9 +324,8 @@ footer{padding:36px 0 60px; color:var(--ink-3); font-size:.82rem; border-top:1px
         <div class="icon" aria-hidden="true">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg>
         </div>
-        <p class="qlabel">Q3</p>
-        <h3><span class="ja">赤ちゃんへの気持ちと，産後の落ち込みはつながっている？</span><span class="en">Are feelings toward the baby linked to postpartum low mood?</span></h3>
-        <p><span class="ja">妊娠中から産後1年半まで，同じお母さんたちに何度もアンケートに答えてもらいました。すると，赤ちゃんへのイライラや拒否感がふだんより強まると，その後に気分の落ち込みが強まりやすいことがわかりました。赤ちゃんとの絆を支えることが，産後うつの予防につながるかもしれません。</span><span class="en">We surveyed the same mothers repeatedly from pregnancy to 18 months after birth. When their feelings of anger or rejection toward their baby rose above their usual level, their depressive symptoms tended to increase afterwards. Supporting the parent–infant bond may help prevent postpartum depression.</span></p>
+        <h3><span class="ja">赤ちゃんへの気持ちと産後の気分</span><span class="en">Feelings toward the baby and postpartum mood</span></h3>
+        <p><span class="ja">妊娠中から産後1年半まで，同じお母さんたちに繰り返し質問紙調査に回答してもらいました。すると，赤ちゃんへのイライラや拒否感がふだんより強まると，その後に気分の落ち込みが強まりやすいことがわかりました。赤ちゃんとの絆を支えることが，産後うつの予防につながるかもしれません。</span><span class="en">We surveyed the same mothers repeatedly from pregnancy to 18 months after birth. When their feelings of anger or rejection toward their baby rose above their usual level, their depressive symptoms tended to increase afterwards. Supporting the parent–infant bond may help prevent postpartum depression.</span></p>
         <p class="src"><span class="ja">もとになった論文：</span><span class="en">Based on: </span>Hiraoka et al. (2024) <a href="https://doi.org/10.1017/S0033291723003707" target="_blank" rel="noopener"><i>Psychological Medicine</i></a></p>
       </article>
     </div>
@@ -347,13 +341,13 @@ footer{padding:36px 0 60px; color:var(--ink-3); font-size:.82rem; border-top:1px
       <div class="scard">
         <span class="who"><span class="ja">高校生・受験生の方へ</span><span class="en">For high school students</span></span>
         <h3><span class="ja">心理学は，心を「データ」で確かめる学問です</span><span class="en">Psychology tests ideas about the mind with data</span></h3>
-        <p><span class="ja">「心理学」と聞くと，人の心を読みとる技術を思い浮かべる人もいるかもしれません。実際の心理学は，ふだん感じる「なぜだろう」を，実験やアンケートで確かめていく学問です。</span><span class="en">Some people imagine psychology as a way of reading minds. In practice, psychology takes the everyday questions we wonder about and tests them with experiments and surveys.</span></p>
-        <p><span class="ja">なかでも発達心理学は，赤ちゃんから大人まで，人が一生をとおしてどう変わっていくのかを扱います。「親になる」という大人の変化も，その大切なテーマのひとつです。</span><span class="en">Developmental psychology looks at how people change across the whole lifespan, from infancy to adulthood. Becoming a parent is one important example of change in adulthood.</span></p>
+        <p><span class="ja">「心理学」と聞くと，人の心を読みとる技術を思い浮かべる人もいるかもしれません。実際の心理学は，人の心や行動についての問いを，実験や調査，観察などの方法を用いて実証的に確かめていく学問です。</span><span class="en">Some people imagine psychology as a way of reading minds. In practice, psychology takes questions about the mind and behavior and tests them empirically, using methods such as experiments, surveys, and observation.</span></p>
+        <p><span class="ja">なかでも発達心理学は，胎児期から老年期まで，人の一生にわたる心の変化を扱います。親になることに伴う変化も，その大切なテーマのひとつです。</span><span class="en">Developmental psychology studies how the mind changes across the whole lifespan, from before birth to old age. The changes that come with becoming a parent are one important topic within it.</span></p>
       </div>
 
       <div class="scard">
         <span class="who warm"><span class="ja">学部生の方へ</span><span class="en">For undergraduates</span></span>
-        <h3><span class="ja">こんなことに関心のある人を歓迎します</span><span class="en">You may enjoy my seminars if you are interested in…</span></h3>
+        <h3><span class="ja">次のようなテーマに関心のある方を歓迎します</span><span class="en">Students interested in the following topics are welcome</span></h3>
         <ul class="tags sage">
           <li><span class="ja">赤ちゃん・子どもの発達</span><span class="en">Infant and child development</span></li>
           <li><span class="ja">親子関係・子育て</span><span class="en">Parent–child relationships</span></li>
@@ -366,17 +360,11 @@ footer{padding:36px 0 60px; color:var(--ink-3); font-size:.82rem; border-top:1px
           <li><span class="ja">発達心理学ゼミ</span><span class="en">Seminar in Developmental Psychology</span></li>
           <li><span class="ja">IT基礎・応用演習</span><span class="en">Information Technology: Basic &amp; Applied Practicum</span></li>
         </ul>
-        <p style="margin-top:18px"><span class="ja">授業では，発達変化を見る視点と，データを分析し読み解く技術の両方を身につけてもらうことを重視しています。ゼミや卒業研究について聞きたいことがあれば，気軽に<a href="#contact">メール</a>で連絡してください。</span><span class="en">In class, I want students to gain both a perspective for observing developmental change and the skills to analyze and interpret data. If you have questions about my seminars or graduation research, feel free to <a href="#contact">email me</a>.</span></p>
+        <p style="margin-top:18px"><span class="ja">授業では，発達変化を見る視点と，データを分析し読み解く技術の両方を身につけてもらうことを重視しています。ゼミや卒業研究についての質問は，<a href="#contact">メール</a>で受け付けています。</span><span class="en">In class, I want students to gain both a perspective for observing developmental change and the skills to analyze and interpret data. Questions about my seminars or graduation research are welcome by <a href="#contact">email</a>.</span></p>
       </div>
     </div>
   </div>
 </section>
-
-<div class="handoff">
-  <div class="wrap">
-    <p><span class="ja">ここから先は，研究者・関係者の方に向けた詳しい情報です。</span><span class="en">The sections below contain detailed information for researchers and colleagues.</span></p>
-  </div>
-</div>
 
 <section id="research">
   <div class="wrap">
