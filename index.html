@@ -149,6 +149,20 @@ p.lead{font-size:1.05rem; color:var(--ink)}
 p.soft{font-size:.9rem; color:var(--ink-3); margin-top:-.2em}
 .note{font-size:.85rem; color:var(--ink-3)}
 
+/* news */
+ul.news{list-style:none; margin:0; padding:0}
+ul.news li{display:grid; grid-template-columns:84px 1fr; gap:4px 18px; padding:13px 0; border-top:1px solid var(--rule); font-size:.95rem; line-height:1.8}
+ul.news li:first-child{border-top:none}
+ul.news time{color:var(--accent); font-weight:600; font-size:.88rem; font-variant-numeric:tabular-nums; padding-top:1px}
+ul.news li > span{color:var(--ink)}
+@media (max-width:600px){ ul.news li{grid-template-columns:1fr; gap:0} }
+.news-more{margin-top:10px; border-top:1px solid var(--rule)}
+.news-more summary{cursor:pointer; color:var(--ink-3); font-size:.88rem; padding:12px 0; list-style:none}
+.news-more summary::-webkit-details-marker{display:none}
+.news-more summary::before{content:"＋"; margin-right:8px; color:var(--accent)}
+.news-more[open] summary::before{content:"－"}
+.news-more summary:hover{color:var(--accent)}
+
 /* Q&A cards */
 .qgrid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:34px}
 @media (max-width:880px){ .qgrid{grid-template-columns:1fr} }
@@ -196,11 +210,11 @@ p.soft{font-size:.9rem; color:var(--ink-3); margin-top:-.2em}
   font-family:var(--serif); font-size:1.1rem; color:var(--ink-3); padding-top:14px;
   position:sticky; top:72px; align-self:start;
 }
-ol.pubs{list-style:none; margin:0; padding:0}
-ol.pubs li{padding:15px 0; border-top:1px solid var(--rule); font-size:.92rem; line-height:1.75}
-.yeargroup ol.pubs li:first-child{border-top:none}
-ol.pubs .t{color:var(--ink); font-weight:600; display:block; margin-bottom:3px}
-ol.pubs .a{color:var(--ink-3); font-size:.85rem; display:block}
+ol.pubs, ol.talks{list-style:none; margin:0; padding:0}
+ol.pubs li, ol.talks li{padding:15px 0; border-top:1px solid var(--rule); font-size:.92rem; line-height:1.75}
+.yeargroup ol.pubs li:first-child, .yeargroup ol.talks li:first-child{border-top:none}
+ol.pubs .t, ol.talks .t{color:var(--ink); font-weight:600; display:block; margin-bottom:3px}
+ol.pubs .a, ol.talks .a{color:var(--ink-3); font-size:.85rem; display:block}
 ol.pubs .j{color:var(--ink-2); font-style:italic}
 ol.pubs .doi{font-size:.8rem; margin-left:6px; white-space:nowrap}
 .badge{
@@ -208,6 +222,8 @@ ol.pubs .doi{font-size:.8rem; margin-left:6px; white-space:nowrap}
   background:var(--sage-soft); color:var(--sage); margin-right:6px; vertical-align:1px; font-weight:600;
 }
 .badge.first{background:var(--gold-soft); color:var(--gold)}
+.badge.kind{background:transparent; color:var(--ink-3); border:1px solid var(--rule)}
+ol.talks .v{color:var(--ink-3); font-size:.85rem; display:block}
 
 /* simple lists */
 ul.plain{list-style:none; margin:0; padding:0}
@@ -243,7 +259,8 @@ footer{padding:36px 0 60px; color:var(--ink-3); font-size:.82rem; border-top:1px
     <a class="navlink hl" href="#intro"><span class="ja">研究紹介</span><span class="en">My research</span></a>
     <a class="navlink hl" href="#students"><span class="ja">学生の方へ</span><span class="en">For students</span></a>
     <a class="navlink" href="#research"><span class="ja">研究の詳細</span><span class="en">Details</span></a>
-    <a class="navlink" href="#publications"><span class="ja">業績</span><span class="en">Publications</span></a>
+    <a class="navlink" href="#publications"><span class="ja">論文</span><span class="en">Papers</span></a>
+    <a class="navlink" href="#talks"><span class="ja">学会発表</span><span class="en">Talks</span></a>
     <a class="navlink" href="#cv"><span class="ja">略歴</span><span class="en">CV</span></a>
     <a class="navlink" href="#contact"><span class="ja">連絡先</span><span class="en">Contact</span></a>
     <button class="langbtn" id="langToggle" type="button">
@@ -291,6 +308,29 @@ footer{padding:36px 0 60px; color:var(--ink-3); font-size:.82rem; border-top:1px
 </header>
 
 <main>
+
+<section id="news">
+  <div class="wrap">
+    <p class="eyebrow">News</p>
+    <h2><span class="ja">最近の活動</span><span class="en">Recent activity</span></h2>
+    <ul class="news">
+      <li><time>2026.10</time><span><span class="ja">日本子育て学会 第18回大会で，乳児を育てる親が抱く罪悪感について<a href="#talks">ポスター発表</a>を行いました。</span><span class="en">I presented a <a href="#talks">poster</a> on guilt among parents of infants at the 18th Annual Meeting of the Japan Society of Research and Practice on Child Rearing.</span></span></li>
+      <li><time>2026.07</time><span><span class="ja">分娩誘発が母子の絆に与える影響についての論文が <a href="https://doi.org/10.1186/s12884-026-09574-4" target="_blank" rel="noopener"><i>BMC Pregnancy and Childbirth</i></a> に掲載されました（筆頭著者）。</span><span class="en">Our paper on labor induction and mother-to-infant bonding was published in <a href="https://doi.org/10.1186/s12884-026-09574-4" target="_blank" rel="noopener"><i>BMC Pregnancy and Childbirth</i></a> (first author).</span></span></li>
+      <li><time>2026.04</time><span><span class="ja">神戸女学院大学 心理学部に専任講師として着任しました。</span><span class="en">I joined the Department of Psychology, Kobe College, as a Lecturer.</span></span></li>
+      <li><time>2026.03</time><span><span class="ja">家族の人数と幼児期の食物アレルギーに関する共著論文が <a href="https://doi.org/10.1111/all.70303" target="_blank" rel="noopener"><i>Allergy</i></a> に掲載されました。</span><span class="en">A co-authored paper on family size and early-childhood food allergy was published in <a href="https://doi.org/10.1111/all.70303" target="_blank" rel="noopener"><i>Allergy</i></a>.</span></span></li>
+      <li><time>2026.01</time><span><span class="ja">親の実行機能と，乳児の泣き声に対する脳反応の関連を調べた論文が <a href="https://doi.org/10.1093/scan/nsag002" target="_blank" rel="noopener"><i>Social Cognitive and Affective Neuroscience</i></a> に掲載されました（筆頭著者）。</span><span class="en">Our paper on executive function and brain responses to infant crying in new parents was published in <a href="https://doi.org/10.1093/scan/nsag002" target="_blank" rel="noopener"><i>Social Cognitive and Affective Neuroscience</i></a> (first author).</span></span></li>
+    </ul>
+    <details class="news-more">
+      <summary><span class="ja">以前のお知らせ</span><span class="en">Earlier news</span></summary>
+      <ul class="news">
+        <li><time>2025.11</time><span><span class="ja">第14回 日本情動学会の公開シンポジウム「育つ・育てるは楽しい」で<a href="#talks">招待講演</a>を行いました。</span><span class="en">I gave an <a href="#talks">invited talk</a> at the public symposium of the 14th Annual Meeting of the Japan Society of Emotion.</span></span></li>
+        <li><time>2025.11</time><span><span class="ja">PFAS曝露と妊娠・出産のアウトカムに関する共著論文が <a href="https://doi.org/10.1016/j.envpol.2025.127353" target="_blank" rel="noopener"><i>Environmental Pollution</i></a> に掲載されました。</span><span class="en">A co-authored paper on PFAS exposure and obstetric outcomes was published in <a href="https://doi.org/10.1016/j.envpol.2025.127353" target="_blank" rel="noopener"><i>Environmental Pollution</i></a>.</span></span></li>
+        <li><time>2025.09</time><span><span class="ja">子ども虐待とエピゲノムに関する共著論文が <a href="https://doi.org/10.1038/s41380-025-03236-1" target="_blank" rel="noopener"><i>Molecular Psychiatry</i></a> に掲載されました。</span><span class="en">A co-authored paper on child maltreatment and the epigenome was published in <a href="https://doi.org/10.1038/s41380-025-03236-1" target="_blank" rel="noopener"><i>Molecular Psychiatry</i></a>.</span></span></li>
+        <li><time>2025.05</time><span><span class="ja">被虐待児の行動・情緒の困難とエピジェネティック・クロックに関する共著論文が <a href="https://doi.org/10.1371/journal.pone.0321952" target="_blank" rel="noopener"><i>PLOS ONE</i></a> に掲載されました。</span><span class="en">A co-authored paper on epigenetic aging and difficulties in maltreated children was published in <a href="https://doi.org/10.1371/journal.pone.0321952" target="_blank" rel="noopener"><i>PLOS ONE</i></a>.</span></span></li>
+      </ul>
+    </details>
+  </div>
+</section>
 
 <section id="intro" class="tinted">
   <div class="wrap">
@@ -644,19 +684,78 @@ footer{padding:36px 0 60px; color:var(--ink-3); font-size:.82rem; border-top:1px
   </div>
 </section>
 
+<section id="talks">
+  <div class="wrap">
+    <p class="eyebrow">Presentations</p>
+    <h2><span class="ja">学会発表・講演</span><span class="en">Presentations</span></h2>
+
+    <div class="yeargroup">
+      <div class="yr">2026</div>
+      <ol class="talks">
+        <li data-kind="poster">
+          <span class="badge kind"><span class="ja">ポスター</span><span class="en">Poster</span></span><span class="t"><span class="ja">乳児を育てる親はどのような場面で罪悪感を抱くのか ― 自由記述の計量テキスト分析による予備的検討 ―</span><span class="en">In what situations do parents of infants feel guilt? A preliminary quantitative text analysis of free descriptions</span></span>
+          <span class="a"><span class="ja"><strong>平岡大樹</strong></span><span class="en"><strong>Hiraoka, D.</strong></span></span>
+          <span class="v"><span class="ja">2026年10月31日｜日本子育て学会 第18回大会（聖心女子大学）</span><span class="en">October 31, 2026 | 18th Annual Meeting of the Japan Society of Research and Practice on Child Rearing (University of the Sacred Heart, Tokyo)</span></span>
+        </li>
+      </ol>
+    </div>
+
+    <div class="yeargroup">
+      <div class="yr">2025</div>
+      <ol class="talks">
+        <li data-kind="invited oral">
+          <span class="badge"><span class="ja">招待</span><span class="en">Invited</span></span><span class="badge kind"><span class="ja">口頭</span><span class="en">Oral</span></span><span class="t"><span class="ja">養育者の脳と情動 ― 子育ての「楽さ」を支える適応メカニズム ―</span><span class="en">The caregiver's brain and emotion: Adaptive mechanisms supporting the "ease" of child-rearing</span></span>
+          <span class="a"><span class="ja"><strong>平岡大樹</strong></span><span class="en"><strong>Hiraoka, D.</strong></span></span>
+          <span class="v"><span class="ja">2025年11月1日｜第14回 日本情動学会（名古屋市立大学，名古屋）　公開シンポジウム「育つ・育てるは楽しい」</span><span class="en">November 1, 2025 | 14th Annual Meeting of the Japan Society of Emotion (Nagoya City University, Nagoya), public symposium</span></span>
+        </li>
+      </ol>
+    </div>
+
+    <div class="yeargroup">
+      <div class="yr">2024</div>
+      <ol class="talks">
+        <li data-kind="">
+          <span class="t"><span class="ja">養育行動の背景にある脳構造・機能の変化</span><span class="en">Structural and functional brain changes underlying parenting behavior</span></span>
+          <span class="a"><span class="ja"><strong>平岡大樹</strong></span><span class="en"><strong>Hiraoka, D.</strong></span></span>
+          <span class="v"><span class="ja">2024年7月8日｜第48回 IBSセミナー</span><span class="en">July 8, 2024 | 48th IBS Seminar</span></span>
+        </li>
+      </ol>
+    </div>
+
+    <div class="yeargroup">
+      <div class="yr">2023</div>
+      <ol class="talks">
+        <li data-kind="">
+          <span class="t"><span class="ja">養育者の心理・行動・神経の個人内変化</span><span class="en">Within-individual change in caregivers' psychology, behavior, and neural responses</span></span>
+          <span class="a"><span class="ja"><strong>平岡大樹</strong></span><span class="en"><strong>Hiraoka, D.</strong></span></span>
+          <span class="v"><span class="ja">2023年9月｜日本心理学会 第87回大会</span><span class="en">September 2023 | 87th Annual Convention of the Japanese Psychological Association</span></span>
+        </li>
+        <li data-kind="">
+          <span class="t"><span class="ja">乳児の泣き声に対する反応の縦断的変化</span><span class="en">Longitudinal change in responses to infant crying</span></span>
+          <span class="a"><span class="ja"><strong>平岡大樹</strong></span><span class="en"><strong>Hiraoka, D.</strong></span></span>
+          <span class="v"><span class="ja">2023年3月13日｜令和4年度 育志賞研究発表会</span><span class="en">March 13, 2023 | JSPS Ikushi Prize Research Presentation (FY2022)</span></span>
+        </li>
+      </ol>
+    </div>
+
+    <div class="yeargroup">
+      <div class="yr">2018</div>
+      <ol class="talks">
+        <li data-kind="">
+          <span class="t"><span class="ja">乳児泣き声への反応に養育者の遺伝・環境・状況要因が与える影響</span><span class="en">Genetic, environmental, and situational influences on caregivers' responses to infant crying</span></span>
+          <span class="a"><span class="ja"><strong>平岡大樹</strong></span><span class="en"><strong>Hiraoka, D.</strong></span></span>
+          <span class="v"><span class="ja">2018年6月16日｜作業療法神経科学研究会 第4回学術集会</span><span class="en">June 16, 2018 | 4th Annual Meeting of the Society of Neuroscience in Occupational Therapy</span></span>
+        </li>
+      </ol>
+    </div>
+
+  </div>
+</section>
+
 <section id="activity">
   <div class="wrap">
-    <p class="eyebrow">Talks, Awards &amp; Grants</p>
-    <h2><span class="ja">発表・受賞・研究費</span><span class="en">Talks, awards &amp; grants</span></h2>
-
-    <h3 style="margin-top:8px"><span class="ja">招待講演・学会発表（抜粋）</span><span class="en">Selected Talks</span></h3>
-    <ul class="plain" style="margin-bottom:40px">
-      <li><span class="when">2025.11</span><span class="what"><span class="badge"><span class="ja">招待</span><span class="en">Invited</span></span><span class="ja">養育者の脳と情動 ― 子育ての「楽さ」を支える適応メカニズム ―</span><span class="en">The caregiver's brain and emotion: Adaptive mechanisms supporting the "ease" of child-rearing</span><span class="sub"><span class="ja">第14回 日本情動学会（名古屋市立大学，名古屋）　公開シンポジウム「育つ・育てるは楽しい」　口頭発表</span><span class="en">14th Annual Meeting of the Japan Society of Emotion (Nagoya City University, Nagoya) — Public symposium, oral presentation</span></span></span></li>
-      <li><span class="when">2024.07</span><span class="what"><span class="ja">養育行動の背景にある脳構造・機能の変化</span><span class="en">Structural and functional brain changes underlying parenting behavior</span><span class="sub"><span class="ja">第48回 IBSセミナー</span><span class="en">48th IBS Seminar</span></span></span></li>
-      <li><span class="when">2023.09</span><span class="what"><span class="ja">養育者の心理・行動・神経の個人内変化</span><span class="en">Within-individual change in caregivers' psychology, behavior, and neural responses</span><span class="sub"><span class="ja">日本心理学会 第87回大会</span><span class="en">87th Annual Convention, Japanese Psychological Association</span></span></span></li>
-      <li><span class="when">2023.03</span><span class="what"><span class="ja">乳児の泣き声に対する反応の縦断的変化</span><span class="en">Longitudinal change in responses to infant crying</span><span class="sub"><span class="ja">令和4年度 育志賞研究発表会</span><span class="en">JSPS Ikushi Prize Research Presentation</span></span></span></li>
-      <li><span class="when">2018.06</span><span class="what"><span class="ja">乳児泣き声への反応に養育者の遺伝・環境・状況要因が与える影響</span><span class="en">Genetic, environmental, and situational influences on caregivers' responses to infant crying</span><span class="sub"><span class="ja">作業療法神経科学研究会 第4回学術集会</span><span class="en">4th Annual Meeting, Society of Neuroscience in Occupational Therapy</span></span></span></li>
-    </ul>
+    <p class="eyebrow">Awards &amp; Grants</p>
+    <h2><span class="ja">受賞・研究費</span><span class="en">Awards &amp; grants</span></h2>
 
     <h3><span class="ja">受賞</span><span class="en">Awards</span></h3>
     <ul class="plain" style="margin-bottom:40px">
@@ -743,8 +842,8 @@ footer{padding:36px 0 60px; color:var(--ink-3); font-size:.82rem; border-top:1px
 
 <footer>
   <div class="wrap">
-    <span class="ja">© 2026 平岡大樹　最終更新：2026年8月</span>
-    <span class="en">© 2026 Daiki Hiraoka ・ Last updated: August 2026</span>
+    <span class="ja">© 2026 平岡大樹　最終更新：2026年11月</span>
+    <span class="en">© 2026 Daiki Hiraoka ・ Last updated: November 2026</span>
   </div>
 </footer>
 
@@ -775,7 +874,7 @@ footer{padding:36px 0 60px; color:var(--ink-3); font-size:.82rem; border-top:1px
         li.style.display = (f === 'all' || kinds.indexOf(f) !== -1) ? '' : 'none';
       });
       // 空になった年グループを隠す
-      document.querySelectorAll('.yeargroup').forEach(function(g){
+      document.querySelectorAll('#publications .yeargroup').forEach(function(g){
         var visible = Array.prototype.some.call(g.querySelectorAll('ol.pubs li'), function(li){
           return li.style.display !== 'none';
         });
