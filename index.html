@@ -147,6 +147,8 @@ ul.plain .sub{color:var(--ink-3); display:block}
 .contact-box dt{font-weight:700; color:var(--ink)}
 .contact-box dd{margin:0}
 .contact-box dd a+a{margin-left:16px}
+details.older{border-top:1px solid var(--rule); margin-top:4px}
+details.older summary{cursor:pointer; color:var(--accent); padding:12px 0}
 footer{padding:28px 0 48px; color:var(--ink-3); border-top:1px solid var(--rule)}
 </style>
 </head>
@@ -466,6 +468,8 @@ footer{padding:28px 0 48px; color:var(--ink-3); border-top:1px solid var(--rule)
       </ol>
     </div>
 
+    <details class="older" id="olderPubs">
+      <summary><span class="ja">2020年以前の論文（9本）を表示</span><span class="en">Show papers from 2020 and earlier (9)</span></summary>
     <div class="yeargroup">
       <div class="yr">2020</div>
       <ol class="pubs">
@@ -528,6 +532,7 @@ footer{padding:28px 0 48px; color:var(--ink-3); border-top:1px solid var(--rule)
         </li>
       </ol>
     </div>
+    </details>
   </div>
 </section>
 
@@ -707,6 +712,7 @@ footer{padding:28px 0 48px; color:var(--ink-3); border-top:1px solid var(--rule)
     btn.addEventListener('click', function(){
       var f = btn.getAttribute('data-filter');
       buttons.forEach(function(b){ b.setAttribute('aria-pressed', String(b === btn)); });
+      if (f !== 'all') document.getElementById('olderPubs').open = true;
       document.querySelectorAll('ol.pubs li').forEach(function(li){
         var kinds = (li.getAttribute('data-kind') || '').split(' ');
         li.style.display = (f === 'all' || kinds.indexOf(f) !== -1) ? '' : 'none';
