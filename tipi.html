@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>性格を測ってみよう</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap">
+<style>
+[hidden] { display: none !important; }
+img { max-width: 100%; }
+/* 1列の縦組み。白地・黒文字・紺1色・罫線のみ。角丸・影なし。単一テーマ（白）を意図して採用 */
+:root {
+  --bg: #ffffff;
+  --fg: #111111;
+  --muted: #555b66;
+  --rule: #b8bec8;
+  --rule-strong: #111111;
+  --accent: #1f4e8c;
+  --accent-fg: #ffffff;
+  --font: "Noto Sans JP", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font);
+  font-size: 17px;
+  line-height: 1.85;
+  margin: 0;
+}
+.wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding-block: 28px 64px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+h1 { font-size: 1.6rem; line-height: 1.4; margin: 0 0 4px; text-wrap: balance; }
+h2 {
+  font-size: 1.2rem; line-height: 1.5; margin: 40px 0 12px; padding-bottom: 6px;
+  border-bottom: 2px solid var(--rule-strong);
+}
+p { margin: 0 0 12px; }
+.sub { color: var(--muted); margin-bottom: 20px; }
+.notice { border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); padding-block: 10px; margin: 16px 0 8px; }
+
+/* 選択肢の凡例 */
+.legend { display: grid; grid-template-columns: 2.2em 1fr; column-gap: 8px; margin: 8px 0 0; font-size: 0.95rem; }
+.legend dt { font-weight: 700; font-variant-numeric: tabular-nums; }
+.legend dd { margin: 0; }
+
+/* 質問 */
+.item { border: 0; margin: 0; padding: 18px 0 16px; border-bottom: 1px solid var(--rule); min-width: 0; }
+.item legend { padding: 0; font-weight: 700; display: flex; gap: 0.6em; float: left; width: 100%; }
+.item legend + .scale { clear: both; }
+.item legend .no { font-variant-numeric: tabular-nums; min-width: 1.6em; }
+.scale { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); margin-top: 10px; border: 1px solid var(--rule-strong); }
+.scale input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.scale label {
+  display: flex; align-items: center; justify-content: center;
+  min-height: 48px; font-size: 1.1rem; font-variant-numeric: tabular-nums;
+  border-left: 1px solid var(--rule); cursor: pointer; user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.scale label:first-of-type { border-left: 0; }
+.scale input:checked + label { background: var(--accent); color: var(--accent-fg); font-weight: 700; }
+.scale input:focus-visible + label { outline: 3px solid var(--accent); outline-offset: -3px; }
+.ends { display: flex; justify-content: space-between; font-size: 0.85rem; color: var(--muted); margin-top: 4px; }
+.picked { font-size: 0.95rem; margin-top: 2px; min-height: 1.85em; }
+
+/* 得点をみる */
+.go { margin-top: 28px; }
+.progress { font-variant-numeric: tabular-nums; }
+#show {
+  font: inherit; font-weight: 700; font-size: 1.05rem;
+  border: 1px solid var(--accent); background: var(--bg); color: var(--accent);
+  padding: 12px 28px; margin-top: 8px; cursor: pointer; border-radius: 0;
+}
+#show:disabled { border-color: var(--rule); color: var(--muted); cursor: default; }
+#show:not(:disabled):hover { background: var(--accent); color: var(--accent-fg); }
+#show:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+
+/* 結果 */
+.row { padding: 16px 0 14px; border-bottom: 1px solid var(--rule); }
+.row-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+.row-head b { font-size: 1.1rem; }
+.row-head .val { font-size: 1.4rem; font-weight: 700; color: var(--accent); font-variant-numeric: tabular-nums; }
+.bar { position: relative; height: 28px; margin: 6px 6px 0; }
+.bar .line { position: absolute; left: 0; right: 0; top: 13px; height: 0; border-top: 1px solid var(--rule-strong); }
+.bar .tick { position: absolute; top: 8px; height: 11px; border-left: 1px solid var(--rule-strong); }
+.bar .mark { position: absolute; top: 6px; width: 15px; height: 15px; margin-left: -7.5px; background: var(--accent); }
+.nums { display: flex; justify-content: space-between; margin: 0 2px; font-size: 0.8rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.poles { display: flex; justify-content: space-between; gap: 16px; font-size: 0.9rem; color: var(--muted); margin-top: 2px; }
+.poles span:last-child { text-align: right; }
+.after { margin-top: 20px; }
+.reset { font: inherit; background: none; border: 0; padding: 0; color: var(--accent); text-decoration: underline; cursor: pointer; }
+.src { font-size: 0.85rem; color: var(--muted); margin-top: 32px; border-top: 1px solid var(--rule); padding-top: 10px; }
+@media (max-width: 420px) {
+  body { font-size: 16px; }
+  .scale label { min-height: 46px; font-size: 1rem; }
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <h1>性格を測ってみよう</h1>
+  <p class="sub">神戸女学院大学 心理学部 模擬講義「性格は測れるのか」</p>
+
+  <p class="notice">答えと得点は，この端末の中だけで計算されます。先生にも，ほかの誰にも送られず，保存もされません。ページを閉じると消えます。</p>
+
+  <p>次の1から10までのことばが，あなた自身にどのくらい当てはまるかを，1から7までの中から選んでください。文全体を見て，ふだんの自分にどれだけ当てはまるかで答えてください。正解はありません。</p>
+
+  <dl class="legend" aria-label="選択肢の意味">
+    <dt>1</dt><dd>全く違うと思う</dd>
+    <dt>2</dt><dd>おおよそ違うと思う</dd>
+    <dt>3</dt><dd>少し違うと思う</dd>
+    <dt>4</dt><dd>どちらでもない</dd>
+    <dt>5</dt><dd>少しそう思う</dd>
+    <dt>6</dt><dd>まあまあそう思う</dd>
+    <dt>7</dt><dd>強くそう思う</dd>
+  </dl>
+
+  <h2>私は自分自身のことを……</h2>
+  <form id="form" novalidate></form>
+
+  <div class="go">
+    <p class="progress" id="progress">0 / 10 問に回答</p>
+    <p id="wait" hidden>全部答えました。先生の合図があるまで，「得点をみる」は押さずに待っていてください。</p>
+    <button type="button" id="show" disabled>得点をみる</button>
+  </div>
+
+  <section id="result" hidden aria-live="polite">
+    <h2>あなたの5つの得点</h2>
+    <p>1から7の物差しの上で，あなたがどのあたりにいるかを示しています。どちらの端が良い，悪いということはありません。見せ合う必要もありません。</p>
+    <div id="rows"></div>
+    <div class="after">
+      <p>それぞれの次元を2問だけで測っています。1問の答えが1つずれるだけで，得点は0.5動きます。この数字は「だいたいこのあたり」と受け取ってください。</p>
+      <p><button type="button" class="reset" id="reset">答えを消して，最初からやり直す</button></p>
+    </div>
+  </section>
+
+  <p class="src">尺度：日本語版 Ten Item Personality Inventory（TIPI-J）。小塩真司・阿部晋吾・カトローニ ピノ（2012）．日本語版Ten Item Personality Inventory（TIPI-J）作成の試み．パーソナリティ研究，21(1)，40–52．</p>
+</div>
+
+<script>
+(() => {
+  const LABELS = ["全く違うと思う", "おおよそ違うと思う", "少し違うと思う", "どちらでもない", "少しそう思う", "まあまあそう思う", "強くそう思う"];
+  const ITEMS = [
+    "活発で，外向的だと思う",
+    "他人に不満をもち，もめごとを起こしやすいと思う",
+    "しっかりしていて，自分に厳しいと思う",
+    "心配性で，うろたえやすいと思う",
+    "新しいことが好きで，変わった考えをもつと思う",
+    "ひかえめで，おとなしいと思う",
+    "人に気をつかう，やさしい人間だと思う",
+    "だらしなく，うっかりしていると思う",
+    "冷静で，気分が安定していると思う",
+    "発想力に欠けた，平凡な人間だと思う"
+  ];
+  // [名前, 順方向の項目番号, 逆転項目の番号, 低い側, 高い側]
+  const DIMS = [
+    ["外向性", 1, 6, "物静か，一人の時間を好む", "社交的，活発"],
+    ["協調性", 7, 2, "率直，競争的", "思いやりがある，協力的"],
+    ["誠実性", 3, 8, "柔軟，気楽", "計画的，粘り強い"],
+    ["神経症傾向", 4, 9, "動じない，安定している", "心配しやすい，傷つきやすい"],
+    ["開放性", 5, 10, "現実的，慣れたものを好む", "好奇心が強い，新しいものを好む"]
+  ];
+
+  const form = document.getElementById("form");
+  const progress = document.getElementById("progress");
+  const wait = document.getElementById("wait");
+  const show = document.getElementById("show");
+  const result = document.getElementById("result");
+  const rows = document.getElementById("rows");
+
+  ITEMS.forEach((text, i) => {
+    const n = i + 1;
+    const fs = document.createElement("fieldset");
+    fs.className = "item";
+    let cells = "";
+    for (let v = 1; v <= 7; v++) {
+      const id = `q${n}_${v}`;
+      cells += `<input type="radio" name="q${n}" id="${id}" value="${v}"><label for="${id}" aria-label="${v} ${LABELS[v - 1]}">${v}</label>`;
+    }
+    fs.innerHTML =
+      `<legend><span class="no">${n}.</span><span>${text}</span></legend>` +
+      `<div class="scale" role="radiogroup">${cells}</div>` +
+      `<div class="ends"><span>全く違うと思う</span><span>強くそう思う</span></div>` +
+      `<div class="picked" id="picked${n}"></div>`;
+    form.appendChild(fs);
+  });
+
+  const answers = () => {
+    const a = {};
+    for (let n = 1; n <= 10; n++) {
+      const c = form.querySelector(`input[name="q${n}"]:checked`);
+      if (c) a[n] = Number(c.value);
+    }
+    return a;
+  };
+
+  const update = () => {
+    const a = answers();
+    const k = Object.keys(a).length;
+    for (let n = 1; n <= 10; n++) {
+      document.getElementById(`picked${n}`).textContent = a[n] ? `選んだ答え：${a[n]}（${LABELS[a[n] - 1]}）` : "";
+    }
+    progress.textContent = `${k} / 10 問に回答`;
+    show.disabled = k < 10;
+    wait.hidden = k < 10 || !result.hidden;
+  };
+
+  form.addEventListener("change", update);
+  form.addEventListener("submit", (e) => e.preventDefault());
+
+  const fmt = (x) => x.toFixed(1);
+
+  show.addEventListener("click", () => {
+    const a = answers();
+    if (Object.keys(a).length < 10) return;
+    rows.innerHTML = "";
+    DIMS.forEach(([name, pos, rev, low, high]) => {
+      const score = (a[pos] + (8 - a[rev])) / 2; // 1〜7
+      const pct = ((score - 1) / 6) * 100;
+      let ticks = "";
+      for (let t = 0; t <= 6; t++) ticks += `<span class="tick" style="left:${(t / 6) * 100}%"></span>`;
+      const div = document.createElement("div");
+      div.className = "row";
+      div.innerHTML =
+        `<div class="row-head"><b>${name}</b><span class="val">${fmt(score)}</span></div>` +
+        `<div class="bar" aria-hidden="true"><span class="line"></span>${ticks}<span class="mark" style="left:${pct}%"></span></div>` +
+        `<div class="nums" aria-hidden="true">${[1,2,3,4,5,6,7].map(v => `<span>${v}</span>`).join("")}</div>` +
+        `<div class="poles"><span>低い：${low}</span><span>高い：${high}</span></div>`;
+      rows.appendChild(div);
+    });
+    result.hidden = false;
+    wait.hidden = true;
+    result.scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
+  });
+
+  document.getElementById("reset").addEventListener("click", () => {
+    form.reset();
+    result.hidden = true;
+    rows.innerHTML = "";
+    update();
+    window.scrollTo({ top: 0 });
+  });
+
+  update();
+})();
+</script>
+</body>
+</html>
