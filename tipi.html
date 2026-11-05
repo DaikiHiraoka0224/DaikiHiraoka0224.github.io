@@ -250,7 +250,30 @@ p { margin: 0 0 12px; }
     rows.innerHTML = "";
     update();
     window.scrollTo({ top: 0 });
+    keepAwake = true;
+    requestWake();
   });
+
+  // 得点を見るまでのあいだ，画面がスリープしないようブラウザに頼む（非対応の端末では何もしない）
+  let wakeLock = null;
+  let keepAwake = true;
+  const requestWake = async () => {
+    if (!keepAwake || wakeLock || !("wakeLock" in navigator) || document.visibilityState !== "visible") return;
+    try {
+      wakeLock = await navigator.wakeLock.request("screen");
+      wakeLock.addEventListener("release", () => { wakeLock = null; });
+    } catch (e) {
+      wakeLock = null;
+    }
+  };
+  const releaseWake = () => {
+    keepAwake = false;
+    if (wakeLock) { wakeLock.release().catch(() => {}); wakeLock = null; }
+  };
+  document.addEventListener("visibilitychange", () => { if (document.visibilityState === "visible") requestWake(); });
+  ["pointerdown", "change"].forEach((ev) => document.addEventListener(ev, requestWake, { passive: true }));
+  show.addEventListener("click", releaseWake);
+  requestWake();
 
   update();
 })();
